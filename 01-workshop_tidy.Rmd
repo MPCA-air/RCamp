@@ -28,7 +28,7 @@ This workshop is available online at
 
 The messy data examples can be downloaded from here
 
-> https://mpca-air.github.io/RCamp/messy_data
+> https://mpca-air.github.io/RCamp/data/messy_data
 
 # Tidy data
 <hr>
@@ -280,18 +280,19 @@ one_table <- left_join(permitted, ultimate)
 list.files("messy_data/")
 
 # Read the PTE tab - "Potential emissions"
-emits <- read_excel("messy_data/2391011-447-SPPRC-CALCS-2017-10-11.xlsx", "PTE - Pollutant Summary")
+emits <- read_excel("messy_data/emission_calcs.xlsx", "PTE - Pollutant Summary")
 
 
 # Where do the column names start? Let's "skip" the top 3 info rows.
 
 
 # Skip first 3 rows
-emits <- read_excel("messy_data/2391011-447-SPPRC-CALCS-2017-10-11.xlsx", 
+emits <- read_excel("messy_data/emission_calcs.xlsx", 
                     sheet = "PTE - Pollutant Summary", 
                     skip = 3)
 
 View(emits)
+
 # Why are pollutant names only listed once in table? Maybe it seemed like a good idea at the time, but can create problems when sorting.
 
 #-------------------------------------------#
