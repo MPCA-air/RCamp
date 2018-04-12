@@ -312,7 +312,8 @@ div.tocify {
 <p><br></p>
 <blockquote>
 <p>We don’t know everything.<br />
-Actually, we just learned how to spell <em>lightening</em> storm. Wait, I mean <strong>lightning</strong>.</p>
+Actually, we just learned how to spell lightening storm.<br />
+Ahem, I mean <strong>lightning</strong> storm.</p>
 </blockquote>
 <p><br></p>
 </div>
@@ -354,8 +355,8 @@ Actually, we just learned how to spell <em>lightening</em> storm. Wait, I mean <
 <li>Enter a file name such as <code>cat_code.R</code></li>
 </ul>
 </div>
-<div id="a-tpir-of-r-studio" class="section level2">
-<h2><span class="header-section-number">1.2</span> A tpir of R Studio</h2>
+<div id="a-tour-of-r-studio" class="section level2">
+<h2><span class="header-section-number">1.2</span> A tour of R Studio</h2>
 <p><img src="http://www.sthda.com/sthda/RDoc/images/rstudio.png" width="580"></p>
 <p><br></p>
 <p><strong>1. Code editor</strong></p>
@@ -534,9 +535,8 @@ cat_df<span class="op">$</span>ages</code></pre></div>
             <span class="dt">time     =</span> <span class="st">&quot;ASAP&quot;</span>)</code></pre></div>
 <p><br></p>
 <p>The function above calls a pizza place and provides several arguments (your address, pizza toppings, and delivery time). With some luck, the function will sucessfully return a new object (your cat’s favorite pizza). Note that when you have more than one argument, you will use a comma to separate them.</p>
-</div>
-<div id="mean-age" class="section level2">
-<h2><span class="header-section-number">2.6</span> Mean age</h2>
+<div id="mean-age" class="section level3 unnumbered">
+<h3>Mean age</h3>
 <p>We already covered two functions: <code>c()</code> and <code>data.frame()</code>. Now let’s use the <code>mean()</code> function to find the average age of our cats.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Call the mean function with cat_ages as input</span>
 cat_ages_mean &lt;-<span class="st"> </span><span class="kw">mean</span>(cat_ages) <span class="co"># Assigns the output to cat_ages_mean</span>
@@ -554,6 +554,7 @@ cat_ages_mean</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cat_ages</code></pre></div>
 <pre><code>## [1]  3.0  7.0 14.5</code></pre>
 <p><br></p>
+</div>
 <div id="function-summary" class="section level3 unnumbered">
 <h3>Function summary</h3>
 <p>There are functions in R that are more complex, but most boil down to the same general setup:</p>
@@ -565,7 +566,7 @@ cat_ages_mean</code></pre></div>
 <h3 id="pop-quiz" class="unnumbered">Pop Quiz!</h3>
 <p><em>Which of these is a valid function call?</em></p>
 <p><input type="radio"> <em>lick(“paws” “tail”)</em> <br> <input type="radio"> <em>scratch, “couch”, “door”</em> <br> <input type="radio"> <em>sleep(3, “hours”)</em> <br> <input type="radio"> <em>meow(until fed)</em> <br> <input type="radio"> <em>shed(1 million, “hairs”)</em> <br></p>
-<p><br></p>
+<br>
 <div class="toggle">
 <button class="btn_code">
 <em>Show solution</em>
@@ -610,12 +611,12 @@ cat_ages_mean</code></pre></div>
 </table>
 <p><br></p>
 <blockquote>
-<p>How do we get this data into R?</p>
+<p><strong>But how do we get this data into R?</strong></p>
 </blockquote>
 <div id="csv-to-the-rescue" class="section level2">
 <h2><span class="header-section-number">3.1</span> CSV to the rescue</h2>
 <p>The main data format in R is the <strong>CSV</strong> <em>(comma-separated values)</em>. A <strong>CSV</strong> is a simple text file that can be opened in R and most other stats software, including Excel.</p>
-<p>Here’s what the example cat table looks like saved as a <strong>CSV</strong> file.</p>
+<p>Here’s how the example cat table looks when it is saved as a <strong>.CSV</strong> file.</p>
 <p><strong>my_cats.csv</strong></p>
 <pre><code>Cat Name,Cat Age,Cat Color  
 Mr. Sauce,3,Salt-n-pepper  
@@ -678,13 +679,13 @@ my_cats</code></pre></div>
 </div>
 <div id="bonus" class="section level2">
 <h2><span class="header-section-number">3.5</span> Bonus</h2>
-<p>You can save the file path as an object, such as (<code>my_cat_file &lt;- &quot;data/my_cats.csv&quot;</code>), and then use that object inside the <code>read.csv()</code> function. This handy trick will make it easier down the road when you want to update your code to use with new data.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Assign the file path character string as an object with the name my_cat_file.</span>
-my_cat_file &lt;-<span class="st"> &quot;data/my_cats.csv&quot;</span>
+<p>You can save the file path as an object, such as <code>cat_file &lt;- &quot;data/my_cats.csv&quot;</code>. Then you can use that object as a shortcut to the location of your data. Now when you want to load the cat table you can write <code>read.csv(cat_file)</code>. This handy trick will make it easier down the road when you want to update your code to use with new data.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Assign the file path character string as an object with the name cat_file.</span>
+cat_file &lt;-<span class="st"> &quot;data/my_cats.csv&quot;</span>
 
 
-<span class="co"># Use read.csv with the object my_cat_file which refers to &quot;data/my_cats.csv&quot;</span>
-<span class="kw">read.csv</span>(my_cat_file)</code></pre></div>
+<span class="co"># Use read.csv with the object cat_file which refers to &quot;data/my_cats.csv&quot;</span>
+<span class="kw">read.csv</span>(cat_file)</code></pre></div>
 <pre><code>##    Cat.Name Cat.Age     Cat.Color
 ## 1 Mr. Sauce       3 Salt-n-pepper
 ## 2  Sad Face       2         Tabby

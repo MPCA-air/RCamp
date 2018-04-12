@@ -140,8 +140,8 @@ _The Official Guide to spelling lightning._
 <br>
 
 > We don't know everything.    
-> Actually, we just learned how to spell _lightening_ storm. 
-> Wait, I mean __lightning__. 
+> Actually, we just learned how to spell lightening storm.   
+> Ahem, I mean __lightning__ storm. 
 
 <br>
 
@@ -186,7 +186,7 @@ __Save script__
 - Enter a file name such as `cat_code.R`
 
 
-## A tpir of R Studio
+## A tour of R Studio
 
 <img src="http://www.sthda.com/sthda/RDoc/images/rstudio.png" width="580">
 
@@ -282,6 +282,7 @@ rm(cat2)
 ```
 
 <br>
+
 
 <div class="tip">
 
@@ -533,14 +534,14 @@ kable(my_cats)
 
 <br>
 
-> How do we get this data into R?
->
+> __But how do we get this data into R?__
+
 
 ## CSV to the rescue 
 
 The main data format in R is the __CSV__ _(comma-separated values)_. A __CSV__ is a simple text file that can be opened in R and most other stats software, including Excel.  
 
-Here's what the example cat table looks like saved as a __CSV__ file. 
+Here's how the example cat table looks when it is saved as a __.CSV__ file. 
 
 __my_cats.csv__  
 
@@ -610,16 +611,16 @@ my_cats
 
 ## Bonus
 
-You can save the file path as an object, such as (`my_cat_file <- "data/my_cats.csv"`), and then use that object inside the `read.csv()` function. This handy trick will make it easier down the road when you want to update your code to use with new data.
+You can save the file path as an object, such as `cat_file <- "data/my_cats.csv"`. Then you can use that object as a shortcut to the location of your data.  Now when you want to load the cat table you can write `read.csv(cat_file)`. This handy trick will make it easier down the road when you want to update your code to use with new data.
 
 ```{r cat-csv2}
 
-# Assign the file path character string as an object with the name my_cat_file.
-my_cat_file <- "data/my_cats.csv"
+# Assign the file path character string as an object with the name cat_file.
+cat_file <- "data/my_cats.csv"
 
 
-# Use read.csv with the object my_cat_file which refers to "data/my_cats.csv"
-read.csv(my_cat_file)
+# Use read.csv with the object cat_file which refers to "data/my_cats.csv"
+read.csv(cat_file)
 
 ```
 
@@ -628,7 +629,7 @@ read.csv(my_cat_file)
 #| Add a new `package` &#x1F4E6;
 <hr>
 
-> What is a package?
+> __What is a package?__
 
 A _package_ is a small add-on for R, like a phone App for your phone. They add capabilities like statistical functions, mapping powers, and special charts. In order to use a new package we first need to install it. 
 

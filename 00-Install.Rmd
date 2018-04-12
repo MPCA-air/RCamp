@@ -54,7 +54,8 @@ __Install RStudio__
 _Backup plan:_ Download RStudio from [www.rstudio.com](https://www.rstudio.com/products/rstudio/download/#download).
 
 
-### Do a happy dance!
+
+## Do a happy dance!
 
 ![](http://www.gifbin.com/bin/012012/1331836791_kittens_on_turntables.gif)
 

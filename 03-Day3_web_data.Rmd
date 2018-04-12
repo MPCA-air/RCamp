@@ -8,6 +8,7 @@ output:
     theme: readable
     highlight: tango
     css: css/camp_style.css
+    self_contained: false
 fontsize: 14pt
 monofont: Source Code Pro
 monofontoptions: Scale = 1.1
@@ -75,6 +76,7 @@ aqi_now <- filter(aqi_now, parameter %in% c("OZONE", "PM2.5"))
 aqi_now %>% arrange(desc(concentration)) %>% select(-time, -aqsid, -units) %>% head(10)
  
 ```
+
 
 
 ### Get monitoring locations

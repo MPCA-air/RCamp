@@ -8,6 +8,7 @@ output:
     theme: readable
     highlight: tango
     css: css/camp_style.css
+    self_contained: false
 fontsize: 14pt
 monofont: Source Code Pro
 monofontoptions: Scale = 1.1
