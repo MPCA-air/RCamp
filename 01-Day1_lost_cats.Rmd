@@ -396,7 +396,7 @@ cat_df$ages
 <div class="quiz">
 ### Pop Quiz, hotshot! {-}
 
-_Which of these names are valid for a new object? (Hint: You are allowed to test them.)_
+__Which of these names are valid for a new object? (Hint: You are allowed to test them.)__
 
 <input type="radio"> _my cat fred_ <br> 
 <input type="radio"> _my_CAT55_    <br> 
@@ -490,7 +490,7 @@ You call the function with input arguments inside parentheses and get an output 
 <div class="quiz">
 ### Pop Quiz!   {-}
 
-_Which of these is a valid function call?_
+__Which of these is a valid function call?__
 
 <input type="radio"> _lick("paws" "tail")_          <br> 
 <input type="radio"> _scratch, "couch", "door"_     <br> 
@@ -579,7 +579,7 @@ Now let's check that it worked. Return to RStudio and open your new data folder 
 
 ## Read CSV into R
 
-Copy the code below to your R script and run the line with the read.csv function (Hit CTRL + ENTER) which requires a character string as the first agrgument of the function. It will return a nice cat data frame called `my_cats`. The character string `"data/my_cats.csv"` inside the parentheses of the `read.csv()` function is the path of the data file. 
+Copy the code below to your R script and run the line with the `read.csv` function (Hit __CTRL + ENTER__). It will return a nice cat data frame called `my_cats`. The character string `"data/my_cats.csv"` inside the parentheses of the `read.csv()` function is the path of the data file. 
 
 ```{r cat-csv}
 
@@ -677,11 +677,11 @@ You may have noticed the row of three letter abbreviations under the column name
 
 We'll see more data types, such as `dates` and `logical`, in later lessons.
 
-<br>
 
+<div class="quiz">
 ### Pop Quiz! {-}
 
-_What data type is the `Color` column?_
+__What data type is the `Color` column?__
 
 <input type="radio"> _letters_        <br> 
 <input type="radio"> _character_      <br> 
@@ -703,10 +703,9 @@ library("cowsay")
 say(paste0("Meow! Not too shabby for a tabby."), "behindcat")
 ```
 
+</div></div>
 
-</div>
 
-<br>
 
 
 ### Get help on functions
@@ -782,11 +781,13 @@ __Key terms__
 `library` The name of the folder that stores all your packages, and the function used to load a package.
 
 
-<br>
 
+<div class="quiz">
 ### Pop Quiz!   {-}
 
-_What package does `read_csv()` come from?_
+<br>
+
+__What package does `read_csv()` come from?__
 
 <input type="radio"> _dinosaur_     <br> 
 <input type="radio"> _get_data_     <br> 
@@ -795,9 +796,7 @@ _What package does `read_csv()` come from?_
 <input type="radio"> _tidyr_        <br>
 
 <br>
-
 <div class="toggle"><button class = "btn_code">_Show solution_</button>
-
 <br>
 
 <i class="fa fa-check" aria-hidden="true" style="color: green;"></i> `readr`  
@@ -806,11 +805,9 @@ _Great job! You're fur real._
 
 </div>
 
-<br>
+<br><br><br>
 
-<hr>
-
-_How would you load the package `catfinder`?_
+__How would you load the package `catfinder`?__
 
 <input type="radio"> _catfinder()_            <br> 
 <input type="radio"> _library("catfinder")_     <br> 
@@ -818,18 +815,17 @@ _How would you load the package `catfinder`?_
 <input type="radio"> _package("catfinder")_     <br> 
 
 <br>
-
 <div class="toggle"><button class = "btn_code">_Show solution_</button>
-
 <br>
 
 <i class="fa fa-check" aria-hidden="true" style="color: green;"></i> `library("catfinder")`  
 
 _Excellent! Keep the streak going._
 
-</div>
+</div></div>
 
-<br>
+
+
 
 # Data exploration {-} 
 
@@ -846,7 +842,7 @@ On your way home from work you find a _wet_ and _mopey_ cat sitting on your fron
 
 When you pick up the cat you notice a collar with a __number__ on it. 
 
-> _HINT: Check under your keyboard for your cat's tag number._ 
+> _HINT: Your cat's tag number is the same as the last digit of your birthday. Weird coincidence right?_ 
 
 This gives you an idea! Your friend recently mentioned a list that has all the missing cats people have reported in the city. Maybe you can use the tag number to help find the lost kitty's home.
 
@@ -978,11 +974,12 @@ That's a lot of cats. And there's more bad news. There's no column for tag numbe
 
 Let's explore the missing cat data a bit more. Hopefully we can find some way to pick out your cat.
 
-<br>
 
+
+<div class="quiz">
 ### Pop Quiz, hotshot! {-}
 
-_What is the second column in the `all_cats` data frame?_
+__What is the second column in the `all_cats` data frame?__
 
 <input type="radio"> _age_         <br> 
 <input type="radio"> _gender_      <br> 
@@ -1000,9 +997,8 @@ _What is the second column in the `all_cats` data frame?_
 
 _You sure aren't kitten around! Great work!_
 
-</div>
+</div></div>
 
-<br>
 
 
 
@@ -1210,14 +1206,11 @@ Create a small table called `uk_oldies` that only has cats from the UK and are o
 
 _Work with your neighbor to create the table._
 
-<br>
 
-
-
-
+<div class="quiz">
 ### Pop Quiz, hotshot! {-}
 
-_Are there more cats with the color `striped` or `butterscotch`?_
+__Are there more cats with the color `striped` or `butterscotch`?__
 
 <input type="radio"> _more butterscotch_          <br> 
 <input type="radio"> _more striped_               <br> 
@@ -1234,9 +1227,7 @@ _Hint: Start by creating a new table called `striped` using the code `filter(all
 
 _Feline fine after that exercise! Great job!_
 
-</div>
-
-<br>
+</div></div>
 
 
 
@@ -1255,7 +1246,9 @@ _Feline fine after that exercise! Great job!_
 
 Team up with your neighbor to think of a summary question to ask the table next to you about the missing cat data. Ask them the question and they'll ask you a question about the cats in return. 
 
-_Work with your neighbor to find the answer._
+<br>
+
+> _Work with your neighbor to find the answer._
 
 
 <br>
@@ -1312,9 +1305,9 @@ the_one <- filter(all_cats,
 
 <br>
 
-_Hint: You can also use the cat's `age` to help narrow down the number of potential cats._
+> _Hint: You can also use the cat's `age` to help narrow down the number of potential cats._
 
-<br> <br>
+<br><br>
 
 
 ### Success! {-}
@@ -1335,25 +1328,25 @@ Great work! You found your cat and you've earned yourself a detective badge. __L
 
 <span style="font-size: 22px;"> <i class="fa fa-group" aria-hidden="true" style="color:black;"></i>&nbsp; __Meet the R cats__ &nbsp; <i class="fa fa-group" aria-hidden="true" style="color:black;"></i></span>
 
-Introduce your _found cat_.
+Let's introduce our rescued cats.
 
 <div>
-![](images/longmire2.png){align="left" width="240" style="margin-right:50px;"}
+![](images/longmire2.png){align="left" width="240" style="margin-right:40px;"}
 </div>
+
+Possible topics:
 
 > - Your found cat's name and best personality trait.  
 > - Your name or detective name.  
 > - Something you want to learn to do with data?  
-> - Dog or Cat? Lizard? Fish person?  
+> - Are you a Cat person? Dog person? Lizard person? Fish person? Plant person?  
   
 
 <br><br><br><br><br><br><br>
 <div style = "margin-top: 55px;"> &nbsp;</div>
 
 
-<br>
-
-
+<br><br>
 
 > <i class="fa fa-hourglass-half" aria-hidden="true" style="color:#040707;"></i> __Time check__ 
 > 
@@ -1367,7 +1360,7 @@ Introduce your _found cat_.
 
 # <i class="fa fa-star" style="color:#ffff00"></i> <i class="fa fa-star" style="color:#ffff00"></i> Bonus level!! <i class="fa fa-star" style="color:#ffff00"></i> <i class="fa fa-star" style="color:#ffff00"></i> {-}
 
-R wasn't made to only look at cat data, but if that's your thing there's certainly more great cat data to be found. Other free data sets are available online and in R packages _(try typing `starwars` after you've loaded the __dplyr__ package)_. One big advantage of CSVs is that you can easily share them online. Once there, researchers and collaborators can read the data directly into their R session using the data's URL.
+R wasn't made to only look at cat data, but if that's your thing there's certainly more great cat data to be found. Other free data sets are also available online and in R packages _(try typing `starwars` after you've loaded the __dplyr__ package)_. One big advantage of CSVs is that you can easily share them online. Once there, researchers and collaborators can easily read your data directly into their own R session using the data's URL.
 
 Kaggle [datasets](https://www.kaggle.com/datasets) is one great resource for interesting data. The example below shows a data set of the top 5,000 rated movies on IMDB.
 
@@ -1464,7 +1457,9 @@ Turn off __"Save Workspace"__
 ## Congratulations! You've completed day 1. {-}
 <br><hr>
 
-Return to [RCamp](index.html). 
+![](https://s5.favim.com/orig/69/balloons-cat-colours-cute-Favim.com-623053.jpg)
+
+Return to [RCamp](index.html)
 
 <br>
 

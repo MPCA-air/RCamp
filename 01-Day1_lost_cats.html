@@ -504,7 +504,7 @@ cat_df<span class="op">$</span>ages</code></pre></div>
 <pre><code>## [1]  3.0  7.0 14.5</code></pre>
 <div class="quiz">
 <h3 id="pop-quiz-hotshot" class="unnumbered">Pop Quiz, hotshot!</h3>
-<p><em>Which of these names are valid for a new object? (Hint: You are allowed to test them.)</em></p>
+<p><strong>Which of these names are valid for a new object? (Hint: You are allowed to test them.)</strong></p>
 <p><input type="radio"> <em>my cat fred</em> <br> <input type="radio"> <em>my_CAT55</em> <br> <input type="radio"> <em>5cats</em> <br> <input type="radio"> <em>my-cat</em> <br> <input type="radio"> <em>Whatever!</em> <br></p>
 <br>
 <div class="toggle">
@@ -564,7 +564,7 @@ cat_ages_mean</code></pre></div>
 <p>You call the function with input arguments inside parentheses and get an output object in return. You can make your own functions in R and call them almost anything you like, even <code>my_amazing_cat_function()</code>. Naming rules for functions and arguments are the same as those for objects (no spaces or special characters like <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>\</code>, <code>=</code>, or <code>!</code> and they can’t begin with a number, sorry).</p>
 <div class="quiz">
 <h3 id="pop-quiz" class="unnumbered">Pop Quiz!</h3>
-<p><em>Which of these is a valid function call?</em></p>
+<p><strong>Which of these is a valid function call?</strong></p>
 <p><input type="radio"> <em>lick(“paws” “tail”)</em> <br> <input type="radio"> <em>scratch, “couch”, “door”</em> <br> <input type="radio"> <em>sleep(3, “hours”)</em> <br> <input type="radio"> <em>meow(until fed)</em> <br> <input type="radio"> <em>shed(1 million, “hairs”)</em> <br></p>
 <br>
 <div class="toggle">
@@ -652,7 +652,7 @@ Noodles,6,Calico  </code></pre>
 </div>
 <div id="read-csv-into-r" class="section level2">
 <h2><span class="header-section-number">3.3</span> Read CSV into R</h2>
-<p>Copy the code below to your R script and run the line with the read.csv function (Hit CTRL + ENTER) which requires a character string as the first agrgument of the function. It will return a nice cat data frame called <code>my_cats</code>. The character string <code>&quot;data/my_cats.csv&quot;</code> inside the parentheses of the <code>read.csv()</code> function is the path of the data file.</p>
+<p>Copy the code below to your R script and run the line with the <code>read.csv</code> function (Hit <strong>CTRL + ENTER</strong>). It will return a nice cat data frame called <code>my_cats</code>. The character string <code>&quot;data/my_cats.csv&quot;</code> inside the parentheses of the <code>read.csv()</code> function is the path of the data file.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">read.csv</span>(<span class="st">&quot;data/my_cats.csv&quot;</span>)</code></pre></div>
 <pre><code>##    Cat.Name Cat.Age     Cat.Color
 ## 1 Mr. Sauce       3 Salt-n-pepper
@@ -696,7 +696,7 @@ cat_file &lt;-<span class="st"> &quot;data/my_cats.csv&quot;</span>
 <h1><span class="header-section-number">4</span> | Add a new <code>package</code> 📦</h1>
 <hr>
 <blockquote>
-<p>What is a package?</p>
+<p><strong>What is a package?</strong></p>
 </blockquote>
 <p>A <em>package</em> is a small add-on for R, like a phone App for your phone. They add capabilities like statistical functions, mapping powers, and special charts. In order to use a new package we first need to install it.</p>
 <div id="readr" class="section level2">
@@ -747,11 +747,9 @@ my_cat_file &lt;-<span class="st"> &quot;data/my_cats.csv&quot;</span>
 <code>int</code> stands for <strong>integer</strong>. Examples: <em>5</em>, <em>34</em>, <em>1071</em></p>
 </blockquote>
 <p>We’ll see more data types, such as <code>dates</code> and <code>logical</code>, in later lessons.</p>
-<p><br></p>
-</div>
-<div id="pop-quiz-1" class="section level3 unnumbered">
-<h3>Pop Quiz!</h3>
-<p><em>What data type is the <code>Color</code> column?</em></p>
+<div class="quiz">
+<h3 id="pop-quiz-1" class="unnumbered">Pop Quiz!</h3>
+<p><strong>What data type is the <code>Color</code> column?</strong></p>
 <p><input type="radio"> <em>letters</em> <br> <input type="radio"> <em>character</em> <br> <input type="radio"> <em>words</em> <br> <input type="radio"> <em>numbers</em> <br> <input type="radio"> <em>integer</em> <br></p>
 <p><br></p>
 <div class="toggle">
@@ -781,7 +779,7 @@ my_cat_file &lt;-<span class="st"> &quot;data/my_cats.csv&quot;</span>
 ##               (_(
 ## </code></pre>
 </div>
-<p><br></p>
+</div>
 </div>
 <div id="get-help-on-functions" class="section level3">
 <h3><span class="header-section-number">4.1.1</span> Get help on functions</h3>
@@ -844,13 +842,12 @@ good_col_names &lt;-<span class="st"> </span><span class="kw">c</span>(<span cla
 <p><strong>Key terms</strong></p>
 <p><code>package</code> An add-on for R that contains new functions someone created to help you. It’s like an App for R.<br />
 <code>library</code> The name of the folder that stores all your packages, and the function used to load a package.</p>
+<div class="quiz">
+<h3 id="pop-quiz-2" class="unnumbered">Pop Quiz!</h3>
 <p><br></p>
-</div>
-<div id="pop-quiz-2" class="section level3 unnumbered">
-<h3>Pop Quiz!</h3>
-<p><em>What package does <code>read_csv()</code> come from?</em></p>
+<p><strong>What package does <code>read_csv()</code> come from?</strong></p>
 <p><input type="radio"> <em>dinosaur</em> <br> <input type="radio"> <em>get_data</em> <br> <input type="radio"> <em>readr</em> <br> <input type="radio"> <em>dplyr</em> <br> <input type="radio"> <em>tidyr</em> <br></p>
-<p><br></p>
+<br>
 <div class="toggle">
 <button class="btn_code">
 <em>Show solution</em>
@@ -859,11 +856,10 @@ good_col_names &lt;-<span class="st"> </span><span class="kw">c</span>(<span cla
 <p><i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>readr</code></p>
 <p><em>Great job! You’re fur real.</em></p>
 </div>
-<p><br></p>
-<hr>
-<p><em>How would you load the package <code>catfinder</code>?</em></p>
+<p><br><br><br></p>
+<p><strong>How would you load the package <code>catfinder</code>?</strong></p>
 <p><input type="radio"> <em>catfinder()</em> <br> <input type="radio"> <em>library(“catfinder”)</em> <br> <input type="radio"> <em>load(“catfinder”)</em> <br> <input type="radio"> <em>package(“catfinder”)</em> <br></p>
-<p><br></p>
+<br>
 <div class="toggle">
 <button class="btn_code">
 <em>Show solution</em>
@@ -872,7 +868,7 @@ good_col_names &lt;-<span class="st"> </span><span class="kw">c</span>(<span cla
 <p><i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>library(&quot;catfinder&quot;)</code></p>
 <p><em>Excellent! Keep the streak going.</em></p>
 </div>
-<p><br></p>
+</div>
 </div>
 </div>
 </div>
@@ -888,7 +884,7 @@ good_col_names &lt;-<span class="st"> </span><span class="kw">c</span>(<span cla
 <p>On your way home from work you find a <em>wet</em> and <em>mopey</em> cat sitting on your front stoop. Oh my! It looks so sad, maybe you can bring it inside and give it a treat.</p>
 <p>When you pick up the cat you notice a collar with a <strong>number</strong> on it.</p>
 <blockquote>
-<p><em>HINT: Check under your keyboard for your cat’s tag number.</em></p>
+<p><em>HINT: Your cat’s tag number is the same as the last digit of your birthday. Weird coincidence right?</em></p>
 </blockquote>
 <p>This gives you an idea! Your friend recently mentioned a list that has all the missing cats people have reported in the city. Maybe you can use the tag number to help find the lost kitty’s home.</p>
 <p><br></p>
@@ -998,10 +994,9 @@ all_cats  &lt;-<span class="st"> </span><span class="kw">read_csv</span>(all_cat
 </blockquote>
 <p>That’s a lot of cats. And there’s more bad news. There’s no column for tag numbers. So which cat is yours? Let’s see… Does your cat look more like a <em>Mr. Buttons</em> or a <em>Furry Potter</em>? That’s a tough call. We need more information!</p>
 <p>Let’s explore the missing cat data a bit more. Hopefully we can find some way to pick out your cat.</p>
-<p><br></p>
-<div id="pop-quiz-hotshot-1" class="section level3 unnumbered">
-<h3>Pop Quiz, hotshot!</h3>
-<p><em>What is the second column in the <code>all_cats</code> data frame?</em></p>
+<div class="quiz">
+<h3 id="pop-quiz-hotshot-1" class="unnumbered">Pop Quiz, hotshot!</h3>
+<p><strong>What is the second column in the <code>all_cats</code> data frame?</strong></p>
 <p><input type="radio"> <em>age</em> <br> <input type="radio"> <em>gender</em> <br> <input type="radio"> <em>nametag</em> <br> <input type="radio"> <em>color</em> <br> <input type="radio"> <em>fur</em> <br></p>
 <p><br></p>
 <div class="toggle">
@@ -1012,7 +1007,6 @@ all_cats  &lt;-<span class="st"> </span><span class="kw">read_csv</span>(all_cat
 <p><i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>color</code></p>
 <p><em>You sure aren’t kitten around! Great work!</em></p>
 </div>
-<p><br></p>
 </div>
 </div>
 </div>
@@ -1293,11 +1287,9 @@ my_fave_colors</code></pre></div>
 <h3>Exercise <i class="fa fa-bicycle" aria-hidden="true" style="color: green"></i></h3>
 <p>Create a small table called <code>uk_oldies</code> that only has cats from the UK and are older than 20.</p>
 <p><em>Work with your neighbor to create the table.</em></p>
-<p><br></p>
-</div>
-<div id="pop-quiz-hotshot-2" class="section level3 unnumbered">
-<h3>Pop Quiz, hotshot!</h3>
-<p><em>Are there more cats with the color <code>striped</code> or <code>butterscotch</code>?</em></p>
+<div class="quiz">
+<h3 id="pop-quiz-hotshot-2" class="unnumbered">Pop Quiz, hotshot!</h3>
+<p><strong>Are there more cats with the color <code>striped</code> or <code>butterscotch</code>?</strong></p>
 <p><input type="radio"> <em>more butterscotch</em> <br> <input type="radio"> <em>more striped</em> <br> <input type="radio"> <em>same amount in both groups</em> <br></p>
 <p><br> <em>Hint: Start by creating a new table called <code>striped</code> using the code <code>filter(all_cats, color == ...)</code></em> <br></p>
 <div class="toggle">
@@ -1307,7 +1299,7 @@ my_fave_colors</code></pre></div>
 <p><br> <i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>more striped</code></p>
 <p><em>Feline fine after that exercise! Great job!</em></p>
 </div>
-<p><br></p>
+</div>
 </div>
 </div>
 <div id="cat-challenge" class="section level2">
@@ -1322,7 +1314,10 @@ my_fave_colors</code></pre></div>
 <h2><span class="header-section-number">10.4</span> Cat challenge #2 🐱 🐱</h2>
 <hr>
 <p>Team up with your neighbor to think of a summary question to ask the table next to you about the missing cat data. Ask them the question and they’ll ask you a question about the cats in return.</p>
+<p><br></p>
+<blockquote>
 <p><em>Work with your neighbor to find the answer.</em></p>
+</blockquote>
 <p><br></p>
 <div id="play-time" class="section level3">
 <h3><span class="header-section-number">10.4.1</span> Play time</h3>
@@ -1357,8 +1352,10 @@ my_cat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span clas
                   playful <span class="op">==</span><span class="st"> </span>?, 
                   age    ...)</code></pre></div>
 <p><br></p>
+<blockquote>
 <p><em>Hint: You can also use the cat’s <code>age</code> to help narrow down the number of potential cats.</em></p>
-<p><br> <br></p>
+</blockquote>
+<p><br><br></p>
 <div id="success" class="section level3 unnumbered">
 <h3>Success!</h3>
 <br>
@@ -1374,13 +1371,14 @@ my_cat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span clas
 </div>
 <p><br><br></p>
 <p><span style="font-size: 22px;"> <i class="fa fa-group" aria-hidden="true" style="color:black;"></i>  <strong>Meet the R cats</strong>   <i class="fa fa-group" aria-hidden="true" style="color:black;"></i></span></p>
-<p>Introduce your <em>found cat</em>.</p>
+<p>Let’s introduce our rescued cats.</p>
 <div>
 <div class="figure">
-<img src="images/longmire2.png" align="left" style="margin-right:50px;" width="240" />
+<img src="images/longmire2.png" align="left" style="margin-right:40px;" width="240" />
 
 </div>
 </div>
+<p>Possible topics:</p>
 <blockquote>
 <ul>
 <li>Your found cat’s name and best personality trait.<br />
@@ -1389,14 +1387,14 @@ my_cat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span clas
 </li>
 <li>Something you want to learn to do with data?<br />
 </li>
-<li>Dog or Cat? Lizard? Fish person?</li>
+<li>Are you a Cat person? Dog person? Lizard person? Fish person? Plant person?</li>
 </ul>
 </blockquote>
 <br><br><br><br><br><br><br>
 <div style="margin-top: 55px;">
  
 </div>
-<p><br></p>
+<p><br><br></p>
 <blockquote>
 <p><i class="fa fa-hourglass-half" aria-hidden="true" style="color:#040707;"></i> <strong>Time check</strong></p>
 <p>Recap:</p>
@@ -1410,7 +1408,7 @@ my_cat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span clas
 </div>
 <div id="bonus-level" class="section level1 unnumbered">
 <h1><i class="fa fa-star" style="color:#ffff00"></i> <i class="fa fa-star" style="color:#ffff00"></i> Bonus level!! <i class="fa fa-star" style="color:#ffff00"></i> <i class="fa fa-star" style="color:#ffff00"></i></h1>
-<p>R wasn’t made to only look at cat data, but if that’s your thing there’s certainly more great cat data to be found. Other free data sets are available online and in R packages <em>(try typing <code>starwars</code> after you’ve loaded the <strong>dplyr</strong> package)</em>. One big advantage of CSVs is that you can easily share them online. Once there, researchers and collaborators can read the data directly into their R session using the data’s URL.</p>
+<p>R wasn’t made to only look at cat data, but if that’s your thing there’s certainly more great cat data to be found. Other free data sets are also available online and in R packages <em>(try typing <code>starwars</code> after you’ve loaded the <strong>dplyr</strong> package)</em>. One big advantage of CSVs is that you can easily share them online. Once there, researchers and collaborators can easily read your data directly into their own R session using the data’s URL.</p>
 <p>Kaggle <a href="https://www.kaggle.com/datasets">datasets</a> is one great resource for interesting data. The example below shows a data set of the top 5,000 rated movies on IMDB.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Below is a movie CSV file downloaded from the internet. </span>
 <span class="kw">library</span>(<span class="st">&quot;readr&quot;</span>)
@@ -1488,7 +1486,11 @@ movies &lt;-<span class="st"> </span><span class="kw">read_csv</span>(movie_file
 <h2>Congratulations! You’ve completed day 1.</h2>
 <br>
 <hr>
-<p>Return to <a href="index.html">RCamp</a>.</p>
+<div class="figure">
+<img src="https://s5.favim.com/orig/69/balloons-cat-colours-cute-Favim.com-623053.jpg" />
+
+</div>
+<p>Return to <a href="index.html">RCamp</a></p>
 <p><br></p>
 <script>
   $(".btn_code").click(function() {
