@@ -38,7 +38,7 @@ __Please connect to your computer__
 
 <p style="display:block; text-align:center;"><img src="https://pbs.twimg.com/media/DNhps0gUQAAcS55.jpg" width="520"></p>
 
-<br><br><br><br>
+<br><br><br>
 
 
 # Welcome to R Camp! {-}
@@ -286,7 +286,7 @@ rm(cat2)
 
 <div class="tip">
 
-__HOORAY!__  Don't worry about deleting data or making a mistake in R. When you load data files into R the content is copied over. So the original files remain safe and never change. If anything disappears or goes wrong in R, it's okay. You can always re-load the data using your script. So no more worries about whether you remembered to save the latest data file or not.
+__HOORAY!__  Don't worry about deleting data or making a mistake in R. When you load data files into R it only copies the contents. That means all your original data files will remain safe and won't suffer from any accidental changes. If anything disappears or goes wrong in R, it's okay! You can always re-load the data using your script. No more worries about whether you remembered to save the latest data file or not.
 </div>
 
 <br>
@@ -737,10 +737,10 @@ __Don't like the column names?__ We can give new column names to the _col_names_
 ```{r, message=F}
 my_cat_file <- "data/my_cats.csv"
 
-#Assign desired column names as a character vector named good_col_names
-good_col_names <- c("Name", "Age", "Color")
+#Assign desired column names as a character vector named column_names
+column_names <- c("Name", "Age", "Color")
 
-read_csv(my_cat_file, good_col_names)
+read_csv(my_cat_file, column_names)
 ```
 
 <br>
@@ -748,9 +748,9 @@ read_csv(my_cat_file, good_col_names)
 We now have the column names we want, but now the original column names in our CSV file show up as a row in our data. We want `read_csv` to ignore the first row. Let's look through the help window and try to find an argument that can help us. The `skip` argument looks like it could be helpful. Sure enough, the description is exactly what we're looking for here. The default is `skip = 0` (read every line), but we can skip the first line by providing `skip = 1`.
 
 ```{r}
-good_col_names <- c("Name", "Age", "Color")
+column_names <- c("Name", "Age", "Color")
 
-read_csv(my_cat_file, good_col_names, skip = 1)
+read_csv(my_cat_file, column_names, skip = 1)
 
 ```
 
@@ -764,9 +764,7 @@ You may be wondering why we included `skip =` for the skip argument, but only pr
 
 A shorthand way to write this would be `feed_pets("dogfood", "catnip", "pellets")`. If we write `feed_pets("dogfood", "pellets", "catnip")`, the function will send _fish pellets_ to your cat and _catnip_ to your fish. No good. If you really wanted to write "pellets" second, you would need to tell R which food item belongs to each animal, such as `feed_pets("dogfood", fish = "pellets", cats = "catnip")`.
 
-The same thing goes for `read_csv()`. In `read_csv(my_cat_file, good_col_names, skip = 1)`, R assumes the file is `my_cat_file` and col_names is `good_col_names`, but the `skip =` has to be included because _skip_ is the 10th argument in `read_csv`. If we don't include `skip = `, R will assume the value we entered is meant for the function's 3rd argument. 
-
-
+The same thing goes for `read_csv()`. In `read_csv(my_cat_file, column_names, skip = 1)`, R assumes the file is `my_cat_file` and that the col_names should be set to `column_names`. The `skip =` argument has to be included explicitly because _skip_ is the __10th__ argument in `read_csv()`. If we don't include `skip = `, R will assume the value we entered is meant for the function's __3rd__ argument. 
 
 ### <i class="fa fa-user-secret" aria-hidden="true" style="color:#040707;"></i> Pro-tip! {-}
 
@@ -884,22 +882,11 @@ Now let's find ourselves some clues.
 #| All the cats!
 <hr>
 
-Thanks to your friend you were able to download a list of all the missing cats from the city's wepage. Follow the steps below to read the cat data into R.  
+Thanks to your friend, you can download a list of all the missing cats in your town. Follow the steps below to read the cat data into R.  
 
+## Find the file's location {-}
 
-## Find the file's path {-}
-
-Open this folder in a new window `X:\Agency_Files\Outcomes\Risk_Eval_Air_Mod\_Air_Risk_Evaluation\R\R_Camp\Student Folder`. Find the file `missing_cat_list.csv`.   
-
-
-## Copy the file's location {-}
-
-- Hold Shift + Right click on the file name. Select "Copy as path" from the menu.
-
-_or_
-
-- Copy the folder location from the path at the top of the explorer window. 
-
+Open this URL in your browser https://github.com/MPCA-air/RCamp/tree/master/data, and find the file `missing_cat_list.csv`. To download, __Right click__ on your cat's file and select __Save Link As...__. Navigate to your project folder and save the file into a folder named `data\`. Don't have a `data` folder? Go ahead and create a new one.  
 
 
 ## Add the file location to your script {-}
@@ -908,8 +895,11 @@ Now you can paste the file's location into the `read_csv()` function. Here's a c
 ```{r snip1, eval = F}
 library("readr")
 
-all_cats_file <- "X:/..."
+# Replace the `...` with the name of the file
+all_cats_file <- "data/..."
 
+
+# Replace the `...` with 'all_cats_file'
 all_cats <- read_csv(...)
 
 ```
@@ -929,6 +919,20 @@ all_cats  <- read_csv(all_cats_file)
 ```
 
 </div>
+
+
+
+<div class = "tip">
+
+## Copy a file's location {-}
+
+In _Windows_ there's a handy trick to copy the path to a file on your computer:
+
+- Hold Shift + Right click on the file name. Select "Copy as path" from the menu.
+
+</div>
+
+
 
 ### <i class="fa fa-user-secret" aria-hidden="true" style="color:#040707;"></i> Pro-tip! {-}
 
@@ -1184,9 +1188,9 @@ filter(all_cats, color %in% c("orange", "striped"))
 
 <br>
 
-> _What is the `c()` thing?_  
+> __What is that `c()` thing all about again?__  
 
-You can put multiple values inside _c()_ to make a vector of items. Each item in the vector is separated by a comma. Let's create a short vector of your favorite colors.
+You can put multiple values inside `c()` to make a vector of items. Each item in the vector is separated by a comma. Let's create a short vector of your favorite colors.
 
 ```{r colors22}
 # This is an example vector
@@ -1270,14 +1274,17 @@ Spend some time getting to know your cat. Is it already hiding from you under th
 
 _Congratulations! You've unlocked your cat's personality._
 
-Thanks to all the quality time you spent with your cat, you now have some high quality data describing your cat's personality. Use the cat's tag number to find the corresponding CSV file in this folder `X:\Agency_Files\Outcomes\Risk_Eval_Air_Mod\_Air_Risk_Evaluation\R\R_Camp\Student Folder\Found cats`. Copy the file to your project's `data\` folder.
+Thanks to all the quality time you spent with your cat, you were able to collect some high quality data describing your cat's personality. You can use your cat's tag number to find the CSV file for your cat. Download your file from the [Cat personality files](https://github.com/MPCA-air/RCamp/tree/master/data/found_cats). 
+
+To download, __Right click__ on your cat's file and select __Save Link As...__. Navigate to your project folder and save the file into a folder named `data\`. 
 
 <br>
 
-Now you can read in a description of your found cat.
+Now you can read in the file with the personality traits of your cat.
 ```{r, eval=F}
 library("readr")
 
+# Replace the `##` with your tag number
 my_cat <- read_csv("data/foundcat_tag##.csv")
 
 ```
@@ -1289,13 +1296,18 @@ Take a minute to explore your cat's personality traits. Can you guess its name?
 <br>
 
 
+
 ## Find your cat
 <hr>
 
 Almost there! Now you can use `filter()` to check if the _all_cats_ table has a cat with a similar personality as yours. Let's hope so.
 
+<br>
+
+__Use `filter()` to find your cat in the big _all_cats_ table.__
 ```{r, eval=F}
 
+# Replace the `?` marks with your cat's personality traits
 the_one <- filter(all_cats, 
                   greedy  == ?, 
                   playful == ?, 
@@ -1305,7 +1317,7 @@ the_one <- filter(all_cats,
 
 <br>
 
-> _Hint: You can also use the cat's `age` to help narrow down the number of potential cats._
+> _Hint: You can also use the cat's `age` range to help narrow down the number of potential cats._
 
 <br><br>
 
@@ -1313,9 +1325,11 @@ the_one <- filter(all_cats,
 ### Success! {-}
 <br><hr>
 
-Great work! You found your cat and you've earned yourself a detective badge. __Let's celebrate!__ 
+Great work! You found your cat and you've earned yourself a detective badge. 
 
 <br>
+
+__Let's celebrate!__ 
 
 <div class="toggle"><button class = "btn_code">~ Receive your badge ~</button>
 <br>
@@ -1348,9 +1362,8 @@ Possible topics:
 
 <br><br>
 
-> <i class="fa fa-hourglass-half" aria-hidden="true" style="color:#040707;"></i> __Time check__ 
+> <i class="fa fa-hourglass-half" aria-hidden="true" style="color:#040707;"></i> __RECAP:__ 
 > 
-> Recap:
 >
 > - What packages have we added to our `library`?
 > 
@@ -1366,14 +1379,15 @@ Kaggle [datasets](https://www.kaggle.com/datasets) is one great resource for int
 
 
 ```{r read-url, eval = F}
-# Below is a movie CSV file downloaded from the internet. 
+
 library("readr")
 
-movie_file_name <- "X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/Student Folder/Sample data/IMDB.csv"
+# Below is a IMDB movie file stored on the internet as a CSV
+movie_url <- "https://raw.githubusercontent.com/MPCA-air/RCamp/master/data/movies/IMDB.csv"
 
 
-#IMDB movie data as CSV
-movies <- read_csv(movie_file_name)
+# Read the IMDB movie data and save as `movies`
+movies <- read_csv(movie_url)
 
 ```
 
@@ -1414,7 +1428,8 @@ __Some additional movie questions if you're using the IMDB data: __
 1. What were the highest and lowest grossing movies in this database?
 1. What actor or actress appears the most times in this database as actor1?
 1. How many Facebook likes has this actor or actress received?
-1. Filter the data set to your favorite movie, or a movie you have seen. What is the duration of that movie? 1. What movie has the longest duration? the shortest? Make a table including only the directors and the mean duration of their movies.
+1. Filter the data set to your favorite movie, or a movie you have seen. What is the duration of that movie?   
+1. What movie has the longest duration? the shortest? Make a table including only the directors and the mean duration of their movies.
 
 <br>
 

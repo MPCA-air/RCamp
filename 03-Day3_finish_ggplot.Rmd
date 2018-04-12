@@ -52,7 +52,7 @@ This tutorial is online at
 1. Double click the __.Rproj__ file to open RStudio.
 1. Ready yourself for an adventure.
 
-<br><br><br><br><br><br><br>
+<br><br><br><br>
 
 
 ## CAMP schedule
@@ -201,20 +201,20 @@ install.packages("readxl")
 
 <br>
 
-Now we can use the `read_excel()` function to load data from any tab we want in an Excel file.
+Now we can use the `read_excel()` function to load data from any tab we want in an Excel file. 
 
-<br>
+As an example, download the movie data as an _XLSX_ file from [HERE](https://github.com/MPCA-air/RCamp/raw/master/data/movies/IMDB%20movie%20data.xlsx) and save it to your `data` folder.
 
-
-```{r, warning = F}
+_Now you can use `read_excel()` to load the data into R._
+```{r, warning = F, eval = F}
 library(readxl)
 library(dplyr)
 library(ggplot2)
 
-movie_file <- "X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/Student Folder/Sample data/IMDB movie data.xlsx"
+movie_file <- "data/IMDB movie data.xlsx"
 
 # Read Excel file
-movies <- read_excel(movie_file)
+movies <- read_xlsx(movie_file)
 ```
 
 <br>

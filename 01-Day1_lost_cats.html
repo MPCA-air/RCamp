@@ -263,7 +263,7 @@ div.tocify {
 <p style="display:block; text-align:center;">
 <img src="https://pbs.twimg.com/media/DNhps0gUQAAcS55.jpg" width="520">
 </p>
-<p><br><br><br><br></p>
+<p><br><br><br></p>
 </div>
 <div id="welcome-to-r-camp" class="section level1 unnumbered">
 <h1>Welcome to R Camp!</h1>
@@ -426,7 +426,7 @@ cat2  </code></pre></div>
 <span class="co"># Now, how do I get the &#39;cat&#39; object back?</span></code></pre></div>
 <p><br></p>
 <div class="tip">
-<p><strong>HOORAY!</strong> Don’t worry about deleting data or making a mistake in R. When you load data files into R the content is copied over. So the original files remain safe and never change. If anything disappears or goes wrong in R, it’s okay. You can always re-load the data using your script. So no more worries about whether you remembered to save the latest data file or not.</p>
+<p><strong>HOORAY!</strong> Don’t worry about deleting data or making a mistake in R. When you load data files into R it only copies the contents. That means all your original data files will remain safe and won’t suffer from any accidental changes. If anything disappears or goes wrong in R, it’s okay! You can always re-load the data using your script. No more worries about whether you remembered to save the latest data file or not.</p>
 </div>
 <p><br></p>
 <div id="give-it-a-name" class="section level2">
@@ -798,10 +798,10 @@ my_cat_file &lt;-<span class="st"> &quot;data/my_cats.csv&quot;</span>
 <p><strong>Don’t like the column names?</strong> We can give new column names to the <em>col_names</em> argument like this:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my_cat_file &lt;-<span class="st"> &quot;data/my_cats.csv&quot;</span>
 
-<span class="co">#Assign desired column names as a character vector named good_col_names</span>
-good_col_names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Name&quot;</span>, <span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Color&quot;</span>)
+<span class="co">#Assign desired column names as a character vector named column_names</span>
+column_names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Name&quot;</span>, <span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Color&quot;</span>)
 
-<span class="kw">read_csv</span>(my_cat_file, good_col_names)</code></pre></div>
+<span class="kw">read_csv</span>(my_cat_file, column_names)</code></pre></div>
 <pre><code>## # A tibble: 4 x 3
 ##   Name      Age     Color        
 ##   &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;        
@@ -811,9 +811,9 @@ good_col_names &lt;-<span class="st"> </span><span class="kw">c</span>(<span cla
 ## 4 Noodles   6       Calico</code></pre>
 <p><br></p>
 <p>We now have the column names we want, but now the original column names in our CSV file show up as a row in our data. We want <code>read_csv</code> to ignore the first row. Let’s look through the help window and try to find an argument that can help us. The <code>skip</code> argument looks like it could be helpful. Sure enough, the description is exactly what we’re looking for here. The default is <code>skip = 0</code> (read every line), but we can skip the first line by providing <code>skip = 1</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">good_col_names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Name&quot;</span>, <span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Color&quot;</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">column_names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Name&quot;</span>, <span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Color&quot;</span>)
 
-<span class="kw">read_csv</span>(my_cat_file, good_col_names, <span class="dt">skip =</span> <span class="dv">1</span>)</code></pre></div>
+<span class="kw">read_csv</span>(my_cat_file, column_names, <span class="dt">skip =</span> <span class="dv">1</span>)</code></pre></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   Name = col_character(),
@@ -833,7 +833,7 @@ good_col_names &lt;-<span class="st"> </span><span class="kw">c</span>(<span cla
 <p><code>feed_pets(dogs = &quot;dogfood&quot;, cats = &quot;catnip&quot;, fish = &quot;pellets&quot;)</code>.</p>
 </blockquote>
 <p>A shorthand way to write this would be <code>feed_pets(&quot;dogfood&quot;, &quot;catnip&quot;, &quot;pellets&quot;)</code>. If we write <code>feed_pets(&quot;dogfood&quot;, &quot;pellets&quot;, &quot;catnip&quot;)</code>, the function will send <em>fish pellets</em> to your cat and <em>catnip</em> to your fish. No good. If you really wanted to write “pellets” second, you would need to tell R which food item belongs to each animal, such as <code>feed_pets(&quot;dogfood&quot;, fish = &quot;pellets&quot;, cats = &quot;catnip&quot;)</code>.</p>
-<p>The same thing goes for <code>read_csv()</code>. In <code>read_csv(my_cat_file, good_col_names, skip = 1)</code>, R assumes the file is <code>my_cat_file</code> and col_names is <code>good_col_names</code>, but the <code>skip =</code> has to be included because <em>skip</em> is the 10th argument in <code>read_csv</code>. If we don’t include <code>skip =</code>, R will assume the value we entered is meant for the function’s 3rd argument.</p>
+<p>The same thing goes for <code>read_csv()</code>. In <code>read_csv(my_cat_file, column_names, skip = 1)</code>, R assumes the file is <code>my_cat_file</code> and that the col_names should be set to <code>column_names</code>. The <code>skip =</code> argument has to be included explicitly because <em>skip</em> is the <strong>10th</strong> argument in <code>read_csv()</code>. If we don’t include <code>skip =</code>, R will assume the value we entered is meant for the function’s <strong>3rd</strong> argument.</p>
 </div>
 <div id="pro-tip-1" class="section level3 unnumbered">
 <h3><i class="fa fa-user-secret" aria-hidden="true" style="color:#040707;"></i> Pro-tip!</h3>
@@ -918,28 +918,21 @@ pet_detective &lt;-<span class="st"> &quot;Agent Cooper&quot;</span>
 <div id="all-the-cats" class="section level1">
 <h1><span class="header-section-number">6</span> | All the cats!</h1>
 <hr>
-<p>Thanks to your friend you were able to download a list of all the missing cats from the city’s wepage. Follow the steps below to read the cat data into R.</p>
-<div id="find-the-files-path" class="section level2 unnumbered">
-<h2>Find the file’s path</h2>
-<p>Open this folder in a new window <code>X:\Agency_Files\Outcomes\Risk_Eval_Air_Mod\_Air_Risk_Evaluation\R\R_Camp\Student Folder</code>. Find the file <code>missing_cat_list.csv</code>.</p>
-</div>
-<div id="copy-the-files-location" class="section level2 unnumbered">
-<h2>Copy the file’s location</h2>
-<ul>
-<li>Hold Shift + Right click on the file name. Select “Copy as path” from the menu.</li>
-</ul>
-<p><em>or</em></p>
-<ul>
-<li>Copy the folder location from the path at the top of the explorer window.</li>
-</ul>
+<p>Thanks to your friend, you can download a list of all the missing cats in your town. Follow the steps below to read the cat data into R.</p>
+<div id="find-the-files-location" class="section level2 unnumbered">
+<h2>Find the file’s location</h2>
+<p>Open this URL in your browser <a href="https://github.com/MPCA-air/RCamp/tree/master/data" class="uri">https://github.com/MPCA-air/RCamp/tree/master/data</a>, and find the file <code>missing_cat_list.csv</code>. To download, <strong>Right click</strong> on your cat’s file and select <strong>Save Link As…</strong>. Navigate to your project folder and save the file into a folder named <code>data\</code>. Don’t have a <code>data</code> folder? Go ahead and create a new one.</p>
 </div>
 <div id="add-the-file-location-to-your-script" class="section level2 unnumbered">
 <h2>Add the file location to your script</h2>
 <p>Now you can paste the file’s location into the <code>read_csv()</code> function. Here’s a code snippet to get you started.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;readr&quot;</span>)
 
-all_cats_file &lt;-<span class="st"> &quot;X:/...&quot;</span>
+<span class="co"># Replace the `...` with the name of the file</span>
+all_cats_file &lt;-<span class="st"> &quot;data/...&quot;</span>
 
+
+<span class="co"># Replace the `...` with &#39;all_cats_file&#39;</span>
 all_cats &lt;-<span class="st"> </span><span class="kw">read_csv</span>(...)</code></pre></div>
 <p><br></p>
 <div class="toggle">
@@ -967,6 +960,13 @@ all_cats  &lt;-<span class="st"> </span><span class="kw">read_csv</span>(all_cat
 ##   greedy = col_integer(),
 ##   owner_phone = col_character()
 ## )</code></pre>
+</div>
+<div class="tip">
+<h2 id="copy-a-files-location" class="unnumbered">Copy a file’s location</h2>
+<p>In <em>Windows</em> there’s a handy trick to copy the path to a file on your computer:</p>
+<ul>
+<li>Hold Shift + Right click on the file name. Select “Copy as path” from the menu.</li>
+</ul>
 </div>
 <div id="pro-tip-2" class="section level3 unnumbered">
 <h3><i class="fa fa-user-secret" aria-hidden="true" style="color:#040707;"></i> Pro-tip!</h3>
@@ -1271,9 +1271,9 @@ all_cats &lt;-<span class="st"> </span><span class="kw">arrange</span>(all_cats,
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">filter</span>(all_cats, color <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;orange&quot;</span>, <span class="st">&quot;striped&quot;</span>))</code></pre></div>
 <p><br></p>
 <blockquote>
-<p><em>What is the <code>c()</code> thing?</em></p>
+<p><strong>What is that <code>c()</code> thing all about again?</strong></p>
 </blockquote>
-<p>You can put multiple values inside <em>c()</em> to make a vector of items. Each item in the vector is separated by a comma. Let’s create a short vector of your favorite colors.</p>
+<p>You can put multiple values inside <code>c()</code> to make a vector of items. Each item in the vector is separated by a comma. Let’s create a short vector of your favorite colors.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># This is an example vector</span>
 my_fave_colors &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;green&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;cornflower&quot;</span>)
 
@@ -1334,11 +1334,13 @@ my_fave_colors</code></pre></div>
 <h1><span class="header-section-number">11</span> | Lost cat traits</h1>
 <hr>
 <p><em>Congratulations! You’ve unlocked your cat’s personality.</em></p>
-<p>Thanks to all the quality time you spent with your cat, you now have some high quality data describing your cat’s personality. Use the cat’s tag number to find the corresponding CSV file in this folder <code>X:\Agency_Files\Outcomes\Risk_Eval_Air_Mod\_Air_Risk_Evaluation\R\R_Camp\Student Folder\Found cats</code>. Copy the file to your project’s <code>data\</code> folder.</p>
+<p>Thanks to all the quality time you spent with your cat, you were able to collect some high quality data describing your cat’s personality. You can use your cat’s tag number to find the CSV file for your cat. Download your file from the <a href="https://github.com/MPCA-air/RCamp/tree/master/data/found_cats">Cat personality files</a>.</p>
+<p>To download, <strong>Right click</strong> on your cat’s file and select <strong>Save Link As…</strong>. Navigate to your project folder and save the file into a folder named <code>data\</code>.</p>
 <p><br></p>
-<p>Now you can read in a description of your found cat.</p>
+<p>Now you can read in the file with the personality traits of your cat.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;readr&quot;</span>)
 
+<span class="co"># Replace the `##` with your tag number</span>
 my_cat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/foundcat_tag##.csv&quot;</span>)</code></pre></div>
 <p><br></p>
 <p>Take a minute to explore your cat’s personality traits. Can you guess its name?</p>
@@ -1347,21 +1349,25 @@ my_cat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span clas
 <h2><span class="header-section-number">11.1</span> Find your cat</h2>
 <hr>
 <p>Almost there! Now you can use <code>filter()</code> to check if the <em>all_cats</em> table has a cat with a similar personality as yours. Let’s hope so.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">the_one &lt;-<span class="st"> </span><span class="kw">filter</span>(all_cats, 
+<p><br></p>
+<p><strong>Use <code>filter()</code> to find your cat in the big <em>all_cats</em> table.</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Replace the `?` marks with your cat&#39;s personality traits</span>
+the_one &lt;-<span class="st"> </span><span class="kw">filter</span>(all_cats, 
                   greedy  <span class="op">==</span><span class="st"> </span>?, 
                   playful <span class="op">==</span><span class="st"> </span>?, 
                   age    ...)</code></pre></div>
 <p><br></p>
 <blockquote>
-<p><em>Hint: You can also use the cat’s <code>age</code> to help narrow down the number of potential cats.</em></p>
+<p><em>Hint: You can also use the cat’s <code>age</code> range to help narrow down the number of potential cats.</em></p>
 </blockquote>
 <p><br><br></p>
 <div id="success" class="section level3 unnumbered">
 <h3>Success!</h3>
 <br>
 <hr>
-<p>Great work! You found your cat and you’ve earned yourself a detective badge. <strong>Let’s celebrate!</strong></p>
+<p>Great work! You found your cat and you’ve earned yourself a detective badge.</p>
 <p><br></p>
+<p><strong>Let’s celebrate!</strong></p>
 <div class="toggle">
 <button class="btn_code">
 ~ Receive your badge ~
@@ -1396,8 +1402,7 @@ my_cat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span clas
 </div>
 <p><br><br></p>
 <blockquote>
-<p><i class="fa fa-hourglass-half" aria-hidden="true" style="color:#040707;"></i> <strong>Time check</strong></p>
-<p>Recap:</p>
+<p><i class="fa fa-hourglass-half" aria-hidden="true" style="color:#040707;"></i> <strong>RECAP:</strong></p>
 <ul>
 <li><p>What packages have we added to our <code>library</code>?</p></li>
 <li><p>What new functions have we learned?</p></li>
@@ -1410,14 +1415,14 @@ my_cat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span clas
 <h1><i class="fa fa-star" style="color:#ffff00"></i> <i class="fa fa-star" style="color:#ffff00"></i> Bonus level!! <i class="fa fa-star" style="color:#ffff00"></i> <i class="fa fa-star" style="color:#ffff00"></i></h1>
 <p>R wasn’t made to only look at cat data, but if that’s your thing there’s certainly more great cat data to be found. Other free data sets are also available online and in R packages <em>(try typing <code>starwars</code> after you’ve loaded the <strong>dplyr</strong> package)</em>. One big advantage of CSVs is that you can easily share them online. Once there, researchers and collaborators can easily read your data directly into their own R session using the data’s URL.</p>
 <p>Kaggle <a href="https://www.kaggle.com/datasets">datasets</a> is one great resource for interesting data. The example below shows a data set of the top 5,000 rated movies on IMDB.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Below is a movie CSV file downloaded from the internet. </span>
-<span class="kw">library</span>(<span class="st">&quot;readr&quot;</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;readr&quot;</span>)
 
-movie_file_name &lt;-<span class="st"> &quot;X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/Student Folder/Sample data/IMDB.csv&quot;</span>
+<span class="co"># Below is a IMDB movie file stored on the internet as a CSV</span>
+movie_url &lt;-<span class="st"> &quot;https://raw.githubusercontent.com/MPCA-air/RCamp/master/data/movies/IMDB.csv&quot;</span>
 
 
-<span class="co">#IMDB movie data as CSV</span>
-movies &lt;-<span class="st"> </span><span class="kw">read_csv</span>(movie_file_name)</code></pre></div>
+<span class="co"># Read the IMDB movie data and save as `movies`</span>
+movies &lt;-<span class="st"> </span><span class="kw">read_csv</span>(movie_url)</code></pre></div>
 <p><br></p>
 <p>Your challenge is to load the movie data (or use one of your own) and to practice using the <code>filter()</code>, <code>arrange()</code>, <code>mutate()</code>, and <code>summarize()</code> functions. When you’ve run out of time, save your script as “my_name.R” to this folder — <code>X:\Agency_Files\Data_Services\DAU\Data Analytics User Group\Shared\r\training\RCamp\Day1\Student scripts</code>.</p>
 <blockquote>
@@ -1447,7 +1452,9 @@ movies &lt;-<span class="st"> </span><span class="kw">read_csv</span>(movie_file
 <li>What were the highest and lowest grossing movies in this database?</li>
 <li>What actor or actress appears the most times in this database as actor1?</li>
 <li>How many Facebook likes has this actor or actress received?</li>
-<li>Filter the data set to your favorite movie, or a movie you have seen. What is the duration of that movie? 1. What movie has the longest duration? the shortest? Make a table including only the directors and the mean duration of their movies.</li>
+<li>Filter the data set to your favorite movie, or a movie you have seen. What is the duration of that movie?<br />
+</li>
+<li>What movie has the longest duration? the shortest? Make a table including only the directors and the mean duration of their movies.</li>
 </ol>
 <p><br></p>
 </div>

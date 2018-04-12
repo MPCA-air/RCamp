@@ -315,7 +315,7 @@ div.tocify {
 </div>
 <div id="load-data-with-read_csv" class="section level3">
 <h3><span class="header-section-number">1.2.2</span> 2. Load data with <code>read_csv()</code></h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">all_cats &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/Student Folder/missing_cat_list.csv&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">all_cats &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/missing_cat_list.csv&quot;</span>)</code></pre></div>
 <p><br></p>
 </div>
 <div id="sort-and-arrange-your-data-with-arrange" class="section level3">
@@ -452,16 +452,16 @@ cricket_cats &lt;-<span class="st"> </span><span class="kw">filter</span>(all_ca
 <h3>Update a column</h3>
 <p>You can also add a <code>found_by</code> column. That way people will know where to send the reward money$$.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my_cat &lt;-<span class="st"> </span><span class="kw">mutate</span>(my_cat, 
-                 <span class="dt">found_by =</span> <span class="st">&quot;Agent Cooper&quot;</span>)</code></pre></div>
+                 <span class="dt">found_by =</span> <span class="st">&quot;Pet Detective Cooper&quot;</span>)</code></pre></div>
 <p><br></p>
 <p>You can also use <code>mutate()</code> to update the value of a column that is already in your data frame.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my_cat &lt;-<span class="st"> </span><span class="kw">mutate</span>(my_cat, 
-                 <span class="dt">found_by =</span> <span class="st">&quot;Secret Agent, shhhhh...&quot;</span>)</code></pre></div>
+                 <span class="dt">found_by =</span> <span class="st">&quot;Nevermind, it&#39;s a secret&quot;</span>)</code></pre></div>
 </div>
 <div id="pro-tip" class="section level3 unnumbered">
 <h3><i class="fa fa-user-secret" aria-hidden="true" style="color:#040707;"></i> Pro-tip!</h3>
 <blockquote>
-<p>If you use <code>mutate()</code> and provide a single value for a column such as <code>found_by = &quot;Secret Agent&quot;</code>, then every row in the column you created will have that value. If you provide a vector of values, such as <code>human_age = cat_age * 4 + 20</code>, then the column you created will have values corresponding to the values in the vector you provided. If you provide a vector that has a different length than the number of rows in your data frame, you’ll get an error telling you the number of values you provide must be equal to the number of rows in your data frame or one.</p>
+<p>If you use <code>mutate()</code> and provide a single value for a column such as <code>found_by = &quot;Pet Detective&quot;</code>, then every row in the column you created will have that value. If you provide a vector of values, such as <code>human_age = cat_age * 4 + 20</code>, then the column you created will have a list of values that each correspond to the values in the vector you provided. If you provide a vector that has a different length than the number of rows in your data frame, you’ll get an error telling you that the number of values you provide must be equal to the number of rows in your data frame or be a single value.</p>
 </blockquote>
 </div>
 </div>
@@ -507,8 +507,8 @@ all_cats &lt;-<span class="st"> </span><span class="kw">mutate</span>(all_cats,
                   grumpy_and_playful <span class="op">==</span><span class="st"> </span><span class="dv">6</span>,
                   human_age <span class="op">&gt;</span><span class="st"> </span><span class="dv">80</span>)</code></pre></div>
 <p><br></p>
-<div id="pop-quiz-hotshot" class="section level3 unnumbered">
-<h3>Pop Quiz, hotshot!</h3>
+<div class="quiz">
+<h3 id="pop-quiz-hotshot" class="unnumbered">Pop Quiz, hotshot!</h3>
 <p><em>What is the name of your friend’s cat?</em></p>
 <p><input type="radio"> <em>Damon</em> <br> <input type="radio"> <em>Fluffy George</em> <br> <input type="radio"> <em>Stinkerbell</em> <br> <input type="radio"> <em>Precious Abe</em> <br></p>
 <p><br></p>
@@ -519,8 +519,8 @@ all_cats &lt;-<span class="st"> </span><span class="kw">mutate</span>(all_cats,
 <p><br> <i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>Fluffy George</code></p>
 <p><em>Breaking Meows! You rock!</em></p>
 </div>
-<p><br><br></p>
 </div>
+<p><br></p>
 </div>
 </div>
 <div id="the-case-of-the-baby-tigers" class="section level1">
@@ -727,11 +727,11 @@ ages_by_color &lt;-<span class="st"> </span><span class="kw">group_by</span>(all
 <span class="kw">library</span>(<span class="st">&quot;ggplot2&quot;</span>)
 
 <span class="co"># Path to movie data</span>
-movie_path &lt;-<span class="st"> &quot;X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/Student Folder/Sample data/IMDB.csv&quot;</span>
+movie_url &lt;-<span class="st"> &quot;https://raw.githubusercontent.com/MPCA-air/RCamp/master/data/movies/IMDB.csv&quot;</span>
 
 
-<span class="co"># Load movie data</span>
-movies &lt;-<span class="st"> </span><span class="kw">read_csv</span>(movie_path)</code></pre></div>
+<span class="co"># Read the IMDB movie data and save as `movies`</span>
+movies &lt;-<span class="st"> </span><span class="kw">read_csv</span>(movie_url)</code></pre></div>
 <div id="rename-the-column-color-to-movie_color." class="section level3">
 <h3><span class="header-section-number">9.1.1</span> Rename the column <code>color</code> to “movie_color”.</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Show column names</span>
