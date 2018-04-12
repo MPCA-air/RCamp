@@ -1,0 +1,113 @@
+---
+title: "R Camp | day 3"
+output: 
+ html_document:
+    toc: true
+    toc_depth: 2
+    toc_float: true
+    theme: readable
+    highlight: tango
+    css: "css/camp_style.css"
+fontsize: 14pt
+monofont: Source Code Pro
+monofontoptions: Scale = 1.1
+---
+
+<style> code {color: #535353 !important;} </style>
+
+```{r setup, include = F}
+knitr::opts_chunk$set(echo = T, error = T, message = F, warning = F)
+
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+
+dt_options <- list(scrollX = T, autoWidth = T, searching = F, ordering = F, lengthChange = F, paginate = F, info = F)
+```
+
+
+# Data paths
+
+<img src="http://s3.crackedcdn.com/phpimages/article/8/6/2/382862_v1.jpg" width="240" align="right" style = "margin-top: -140px; margin-right: 20px">
+
+1. [Database connections](03-Day3_db_connect.html)
+1. [GIS & Shapefiles](03-Day3_GIS.html)
+1. [Web data](03-Day3_web_data.html)
+1. [Tableau](03-Day3_tableau.html)
+1. __Other Stats software: SAS, SPSS, MATLAB__
+
+<br><br><br>
+
+
+# Other stats software
+
+When working with other researchers you may come across data stored in a proprietary format such as an SPSS file. Don't worry! R can read and write these files too. No one even has to know we can't afford to use SAS.
+
+There are example data files from other stats software in the folder `X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/Student Folder/Sample data`. You can copy some of the files to your R project folder to make it easier to test some of the functions for yourself.
+
+## SAS, SPSS, Stata
+
+![](https://github.com/tidyverse/haven/raw/master/man/figures/logo.png){width="140" align="right" style="margin-left: 25px;"}
+
+<br>
+
+To read and write _SAS_, _SPSS_, or _Stata_ files you can use the `haven` package, which is another member of the _tidyverse_. While it is possible to save data from R in other proprietary formats, we recommend using the _.CSV_ format, as it will be readable by most statistical software and will prevent any future worries about software versions preventing you from opening your data.
+
+## Examples
+
+```{r sas, eval=F}
+library(haven)
+
+# SAS
+read_sas("sas-data.sas7bdat")
+
+write_sas(mtcars, "mtcars.sas7bdat")
+
+
+# SPSS
+read_sav("spss-data.sav")
+
+write_sav(mtcars, "mtcars.sav")
+
+
+# Stata
+read_dta("stata-data.dta")
+
+write_dta(mtcars, "mtcars.dta")
+```
+
+
+# Minitab, Systat, Matlab
+
+The`foreign` package reads and writes _MiniTab_ and _SYSTAT (SigmaPlot)_ files. When reading these file types you may end up with a _list_ of multiple data items. To access one of the list items use brackets such as `data[1]`, or add the name of the item in the list after a _$_ sign, as in `data$Control`. In some cases it may be easier to ask the original author of the data to export a _.CSV_ file for you.
+
+
+## Minitab and Systat (SigmaPlot) examples
+```{r minitab, eval=F}
+library(foreign)
+
+# Minitab
+read.mtp("minitab-data.mtp")
+
+
+# SYSTAT and SigmaPlot
+read.systat("systat-old-data.sys") 
+
+read.systat("systat-new-data.syd")
+
+```
+
+
+
+## Matlab 
+
+The`R.matlab` package will read and write _Matlab_ files. 
+
+```{r matlab, eval=F}
+library(R.matlab)
+
+# Matlab
+readMat("matlab-data.mat2") 
+
+
+```
+
+

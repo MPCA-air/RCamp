@@ -1,3 +1,3 @@
-# RCamp
+# R Camp
 
-Website: https://MPCA-air.github.io/RCamp
+Find tutorials and workshops at https://MPCA-air.github.io/RCamp.
