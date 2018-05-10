@@ -5,7 +5,7 @@ output:
     toc: true
     toc_depth: 2
     toc_float: true
-    theme: readable
+    theme: readable wi
     highlight: tango
     self_contained: false
     css: css/camp_style.css
@@ -206,7 +206,7 @@ Now we can use the `read_excel()` function to load data from any tab we want in 
 As an example, download the movie data as an _XLSX_ file from [HERE](https://github.com/MPCA-air/RCamp/raw/master/data/movies/IMDB%20movie%20data.xlsx) and save it to your `data` folder.
 
 _Now you can use `read_excel()` to load the data into R._
-```{r, warning = F, eval = F}
+```{r, warning = F, eval = T}
 library(readxl)
 library(dplyr)
 library(ggplot2)

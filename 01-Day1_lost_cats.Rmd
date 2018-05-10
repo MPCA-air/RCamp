@@ -56,7 +56,7 @@ We like __R__.
 
 We are not computer scientists. 
 
-Sometimes we mistakes. You will see us make mistakes. Feel free to laugh. It's okay. Really.
+We make lots of mistakes. You will see us make mistakes. Feel free to laugh at us. It's okay. Really.
 
 
 <br><br>
@@ -106,14 +106,14 @@ wordcloud2(data.frame(word = names, freq = frequency), size = 1, color = 'random
 
 ```
 
-![](images/name_cloud.png){widht=70%}
+![](images/name_cloud.png){width=75%}
 
 <br>
 
 You are the all in this together. Use each other as a resource. Share ideas, share code, collaborate. Make bad R jokes.   
 <br>
 
-__Here's one:__  _What 'tis the pirate's favorite letter?_
+__Here's one:__  _What'tis the pirate's favorite letter?_
 
 <br>
 

@@ -1,5 +1,5 @@
 ---
-title: "R Camp | Installation"
+title: "R | Installation"
 output: 
  html_document:
     toc: true
@@ -23,24 +23,51 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ```
 
 
-## Install `R`
+# Install `R`
 
-Let’s install the newest version of __R__. This is the free programming language that will process your analysis behind the scenes.
+Let’s install the newest version of __R__. This data software is contributed to and maintained by people all around the world. It lets you perform data analysis like you're writing a recipe for chocolate chip cookies. Once you've written your favorite recipe you can use it over and over again and share it with your collaborators. 
+
 
 __Install R__  
+
+1. Open your web browser and navigate to R's download page -> [CRAN](https://cran.r-project.org).
+1. Choose your operating system from the top. Or use the shortcuts below.
+    - __WINDOWS__ go here: [Windows](https://cran.r-project.org/bin/windows/base/)
+    - __MAC__ go here: [Mac](https://cran.r-project.org/bin/macosx/)
+        - Scroll down and download the highest numbered file (ex. __R-3.5.0.pkg__)
+    - __LINUX__ go here: [Linux](https://cran.r-project.org/bin/linux/)
+1. Open the file and install with the default options.
+
+
+<br>
+
+<div class="toggle"><button class = "btn_code_blue">_Instructions for MPCA staff_</button>
+<br>
 
 1. Open the ` G:\Lapps\R ` folder.
 1. Double click the ` R-3.4.2-win.exe ` file.
 1. In the pop-up window, click the Ok and Next buttons until you reach the end.
+</div>
 
-_Backup plan:_ Download R from [CRAN](https://cran.r-project.org/bin/windows/base/).
   
   
-## Install `RStudio` 
+# Install `RStudio` 
 
-Now let's install the newest-coolest version of __RStudio__. This is the user interface we’ll use to write R scripts and keep our projects organized.
+Now let's install the newest version of __RStudio__. This is the handy user interface we use to write R scripts and keep our projects organized. It isn't required to use R, but it makes things easier.
+
 
 __Install RStudio__  
+
+
+1. Open your web browser and navigate to [www.rstudio.com](https://www.rstudio.com/products/rstudio/download/#download).
+1. Choose your operating system and download the newest version.
+1. Open the file and install with the default options.
+1. You are officially ready.
+
+<br>
+
+<div class="toggle"><button class = "btn_code_blue">_Instructions for MPCA staff_</button>
+<br>
 
 1. Open the Start menu. \ \*_Click the Window's logo on the bottom left of the screen._
 1. Search for _Software Center_
@@ -49,13 +76,17 @@ __Install RStudio__
 1. A secret window will open behind the _Software Center_. Find it by minimizing the _Software Center_.
 1. In the installation window, click _Next_.
 1. Install RStudio to the default folder `C:\Program Files `
-1. You are officially ready.
-
-_Backup plan:_ Download RStudio from [www.rstudio.com](https://www.rstudio.com/products/rstudio/download/#download).
+</div>
 
 
-
-## Do a happy dance!
+# Do a happy dance!
 
 ![](http://www.gifbin.com/bin/012012/1331836791_kittens_on_turntables.gif)
+
+
+<script>
+  $(".btn_code").click(function() {
+    $(this.parentNode).toggleClass("open");
+  });
+</script> 
 

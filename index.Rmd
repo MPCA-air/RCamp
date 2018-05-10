@@ -65,7 +65,7 @@ __Day 3__
 
 <div class="column3" style="border: 1px solid grey; height: 270px; max-height: 270px;">
 
-<a href="03_Day3_finish_ggplot.html"><img src="images/lego_cat3.png"></a>
+<a href="03-Day3_finish_ggplot.html"><img src="images/lego_cat3.png"></a>
 
 </div>
 </div>
