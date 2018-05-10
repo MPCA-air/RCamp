@@ -5,7 +5,7 @@ output:
     toc: true
     toc_depth: 2
     toc_float: true
-    theme: readable wi
+    theme: readable
     highlight: tango
     self_contained: false
     css: css/camp_style.css
@@ -211,10 +211,10 @@ library(readxl)
 library(dplyr)
 library(ggplot2)
 
-movie_file <- "data/IMDB movie data.xlsx"
+movie_file <- "data/movies/IMDB movie data.xlsx"
 
 # Read Excel file
-movies <- read_xlsx(movie_file)
+movies <- read_excel(movie_file)
 ```
 
 <br>
@@ -307,7 +307,6 @@ ggplot(gross_by_year, aes(x = title_year, y = total_gross, color = content_ratin
 #### Exercise <i class="fa fa-bicycle" aria-hidden="true" style="color: green"></i> {-}
 
 Make a line chart showing the total `budget` of all the movies each year.
-
 
 
 # Boxplots
@@ -506,21 +505,20 @@ ggplot(movies, aes(x = title_year,  y = profit)) +
 __Warning!__ This adds thousands of labels and may stall your computer for a few minutes. You have been warned.
 
 ```{r}
-
 library(hrbrthemes)  #install.packages(hrbrthemes)
 library(scales)      # For the $ dollar_format() labels
 
 ggplot(movies, aes(x = title_year,  y = profit)) + 
   geom_label(aes(label = movie_title, 
                  fill  = profit > 0),
-             show.legend = F,
-             alpha = 0.9) + 
+                 show.legend = F,
+                 alpha = 0.9) + 
   scale_y_continuous(labels = dollar_format()) + 
-  labs(title  = "Did your favorite film make or lose $$$ ?",
+  labs(title    = "Did your favorite film make or lose $$$ ?",
        subtitle = "Profit of top 5,000 rated films on IMDB",
-       y      = "Profit in U.S. dollars",
-       x      = "year",
-       caption = "Brought to you by the #R-Cats") +
+       y        = "Profit in U.S. dollars",
+       x        = "year",
+       caption  = "Brought to you by the #R-Cats") +
   theme_ipsum_rc() + 
   theme(plot.title = element_text(size = 24)) # Increase title size
 
@@ -747,7 +745,6 @@ _Hint:_ _Summarize grouped by `content_rating` and `title_year`._
 _Hint 2:_ _Use `geom_tile(aes(fill = mean_score))`._ 
 
 ```{r, echo = T}
-
 filter(movies, title_year >= 1990) %>% 
   group_by(content_rating, title_year) %>% 
   summarize(mean_score = mean(imdb_score, na.rm = T)) %>% 
