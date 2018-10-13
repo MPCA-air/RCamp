@@ -405,14 +405,15 @@ __Which of these names are valid for a new object? (Hint: You are allowed to tes
 <input type="radio"> _Whatever!_   <br>
 
 <br>
-<div class="toggle"><button class = "btn_code">_Show solution_</button>
-<br>
+<details>
+<summary class = "btn_code">_Show solution_</summary>
+<p>
 
 <i class="fa fa-check" aria-hidden="true" style="color: green;"></i> `my_CAT55`  
 
 _Yes!! That was purrfect!_
 
-</div></div>
+</p></details></div>
 
 
 ## Leave a #comment
@@ -499,14 +500,14 @@ __Which of these is a valid function call?__
 <input type="radio"> _shed(1 million, "hairs")_     <br>
 
 <br>
-<div class="toggle"><button class = "btn_code">_Show solution_</button>
-<br>
-
+<details>
+<summary class = "btn_code">_Show solution_</summary>
+<p>
 <i class="fa fa-check" aria-hidden="true" style="color: green;"></i> `sleep(3, "hours")`  
 
 _Correct! You're quite good at this._
 
-</div></div>
+</p></details></div>
 
 
 #| Reading and loading data
@@ -691,21 +692,19 @@ __What data type is the `Color` column?__
 
 <br>
 
-<div class="toggle"><button class = "btn_code">_Show solution_</button>
-
-<br>
+<details>
+<summary class = "btn_code">_Show solution_</summary>
+<p>
 
 <i class="fa fa-check" aria-hidden="true" style="color: green;"></i> `character`  
 
 ```{r, echo=F, warning=F}
 library("cowsay")
 
-say(paste0("Meow! Not too shabby for a tabby."), "behindcat")
+cat(say(paste0("Meow! Not too shabby for a tabby."), "behindcat", type = "string")) 
 ```
 
-</div></div>
-
-
+</p></details></div>
 
 
 ### Get help on functions
@@ -794,16 +793,17 @@ __What package does `read_csv()` come from?__
 <input type="radio"> _tidyr_        <br>
 
 <br>
-<div class="toggle"><button class = "btn_code">_Show solution_</button>
-<br>
+<details>
+<summary class = "btn_code">_Show solution_</summary>
+<p>
 
 <i class="fa fa-check" aria-hidden="true" style="color: green;"></i> `readr`  
 
 _Great job! You're fur real._
 
-</div>
+</p></details>
 
-<br><br><br>
+<br>
 
 __How would you load the package `catfinder`?__
 
@@ -813,16 +813,15 @@ __How would you load the package `catfinder`?__
 <input type="radio"> _package("catfinder")_     <br> 
 
 <br>
-<div class="toggle"><button class = "btn_code">_Show solution_</button>
-<br>
+<details>
+<summary class = "btn_code">_Show solution_</summary>
+<p>
 
 <i class="fa fa-check" aria-hidden="true" style="color: green;"></i> `library("catfinder")`  
 
 _Excellent! Keep the streak going._
 
-</div></div>
-
-
+</p></details></div>
 
 
 # Data exploration {-} 
@@ -905,10 +904,9 @@ all_cats <- read_csv(...)
 ```
 
 <br>
-
-<div class="toggle"><button class = "btn_code">_Show solution_</button>
-
-<br>
+<details>
+<summary class = "btn_code">_Show solution_</summary>
+<p>
 
 ```{r read-all-cats, warning = F}
 library("readr")
@@ -918,13 +916,13 @@ all_cats_file <- "X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluatio
 all_cats  <- read_csv(all_cats_file)
 ```
 
-</div>
+</p></details>
 
 
-
+<br>
 <div class = "tip">
 
-## Copy a file's location {-}
+### Copy a file's location {-}
 
 In _Windows_ there's a handy trick to copy the path to a file on your computer:
 
@@ -992,17 +990,15 @@ __What is the second column in the `all_cats` data frame?__
 <input type="radio"> _fur_         <br> 
 
 <br>
-
-<div class="toggle"><button class = "btn_code">_Show solution_</button>
-
-<br>
+<details>
+<summary class = "btn_code">_Show solution_</summary>
+<p>
 
 <i class="fa fa-check" aria-hidden="true" style="color: green;"></i> `color`  
 
 _You sure aren't kitten around! Great work!_
 
-</div></div>
-
+</p></details></div>
 
 
 
@@ -1225,13 +1221,14 @@ __Are there more cats with the color `striped` or `butterscotch`?__
 _Hint: Start by creating a new table called `striped` using the code `filter(all_cats, color == ...)`_
 <br>
 
-<div class="toggle"><button class = "btn_code">_Show solution_</button>
-<br>
+<details>
+<summary class = "btn_code">_Show solution_</summary>
+<p>
 <i class="fa fa-check" aria-hidden="true" style="color: green;"></i> `more striped`  
 
 _Feline fine after that exercise! Great job!_
 
-</div></div>
+</p></details></div>
 
 
 
@@ -1322,23 +1319,23 @@ the_one <- filter(all_cats,
 <br><br>
 
 
-### Success! {-}
+### Great work! {-}
 <br><hr>
 
-Great work! You found your cat and you've earned yourself a detective badge. 
+You found your cat a home and you've earned yourself a detective badge. 
 
 <br>
 
-__Let's celebrate!__ 
+<details>
+<summary><button class = "btn_code">__Receive your badge__</button></summary>
+<p>
 
-<div class="toggle"><button class = "btn_code">~ Receive your badge ~</button>
-<br>
 
 <img src="https://ih0.redbubble.net/image.92273350.5722/sticker,220x200-bg,ffffff-pad,220x200,ffffff.u5.jpg" width="200" align="left" style="margin-top: -20px; margin-right: 30px;">
 
-</div>
+</p></details>
 
-<br><br>
+<br>
 
 <span style="font-size: 22px;"> <i class="fa fa-group" aria-hidden="true" style="color:black;"></i>&nbsp; __Meet the R cats__ &nbsp; <i class="fa fa-group" aria-hidden="true" style="color:black;"></i></span>
 
@@ -1368,70 +1365,6 @@ Possible topics:
 > - What packages have we added to our `library`?
 > 
 > - What new functions have we learned?
-
-
-
-# <i class="fa fa-star" style="color:#ffff00"></i> <i class="fa fa-star" style="color:#ffff00"></i> Bonus level!! <i class="fa fa-star" style="color:#ffff00"></i> <i class="fa fa-star" style="color:#ffff00"></i> {-}
-
-R wasn't made to only look at cat data, but if that's your thing there's certainly more great cat data to be found. Other free data sets are also available online and in R packages _(try typing `starwars` after you've loaded the __dplyr__ package)_. One big advantage of CSVs is that you can easily share them online. Once there, researchers and collaborators can easily read your data directly into their own R session using the data's URL.
-
-Kaggle [datasets](https://www.kaggle.com/datasets) is one great resource for interesting data. The example below shows a data set of the top 5,000 rated movies on IMDB.
-
-
-```{r read-url, eval = F}
-
-library("readr")
-
-# Below is a IMDB movie file stored on the internet as a CSV
-movie_url <- "https://raw.githubusercontent.com/MPCA-air/RCamp/master/data/movies/IMDB.csv"
-
-
-# Read the IMDB movie data and save as `movies`
-movies <- read_csv(movie_url)
-
-```
-
-<br>
-
-Your challenge is to load the movie data (or use one of your own) and to practice using the `filter()`, `arrange()`, `mutate()`, and `summarize()` functions. When you've run out of time, save your script as "my_name.R" to this folder — ```X:\Agency_Files\Data_Services\DAU\Data Analytics User Group\Shared\r\training\RCamp\Day1\Student scripts```.
-
-> Add your data file as well if it isn't already on the X-drive.
-
-<br>
-
-__Create a new R script that answers a few questions about your data set: __
-
-1. How many rows are in your data set?
-1. What are the column names?
-1. Find a mean of a single column.
-1. Use `group_by()` to summarize()` the values of a column based on a group it's in. 
-1. Use `mutate()` to convert one of your columns into a different unit (e.g. `lbs` to `Millions of lbs` or `grams` to `kilograms`).
-1. `filter()` your data to a single category.
-1. Use `%in%` to filter your data to a few categories. 
-1. Make up a question of your own and try to answer it using the data.
-
-
-> _Did answering these questions raise new questions about your data?_
-
-Add some of these questions to your script using comments `#`. 
-
-```{r}
-# Why does Facility A have no emissions?
-# What happened to the County value for some monitors?
-# Is this site really a million times bigger than that site??
-
-```
-
-
-__Some additional movie questions if you're using the IMDB data: __
-
-1. What were the highest and lowest grossing movies in this database?
-1. What actor or actress appears the most times in this database as actor1?
-1. How many Facebook likes has this actor or actress received?
-1. Filter the data set to your favorite movie, or a movie you have seen. What is the duration of that movie?   
-1. What movie has the longest duration? the shortest? Make a table including only the directors and the mean duration of their movies.
-
-<br>
 
 
 
@@ -1474,13 +1407,9 @@ Turn off __"Save Workspace"__
 
 ![](https://s5.favim.com/orig/69/balloons-cat-colours-cute-Favim.com-623053.jpg)
 
-Return to [RCamp](index.html)
-
 <br>
 
-<script>
-  $(".btn_code").click(function() {
-    $(this.parentNode).toggleClass("open");
-  });
-</script> 
+# Return to [RCamp](index.html) {-}
+
+<br>
 

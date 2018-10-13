@@ -23,7 +23,9 @@
 <link href="01-Day1_lost_cats_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="01-Day1_lost_cats_files/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="01-Day1_lost_cats_files/navigation-1.1/tabsets.js"></script>
-<link href="01-Day1_lost_cats_files/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="01-Day1_lost_cats_files/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="01-Day1_lost_cats_files/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="01-Day1_lost_cats_files/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
 
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -120,6 +122,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -273,7 +278,7 @@ div.tocify {
 <p>We are <strong>Kristie</strong>, <strong>Dorian</strong>, and <strong>Derek</strong>.</p>
 <p>We like <strong>R</strong>.</p>
 <p>We are not computer scientists.</p>
-<p>Sometimes we mistakes. You will see us make mistakes. Feel free to laugh. It’s okay. Really.</p>
+<p>We make lots of mistakes. You will see us make mistakes. Feel free to laugh at us. It’s okay. Really.</p>
 <p><br><br></p>
 <div id="who-are-you" class="section level3 unnumbered">
 <h3>Who are you?</h3>
@@ -281,13 +286,13 @@ div.tocify {
 <div id="you-are-the-great-cohort-of-2018" class="section level4 unnumbered">
 <h4>You are the great cohort of   <span style="font-size: 1.8em;"><i class="fa fa-group" aria-hidden="true" style="color: steelblue;"></i></span> <span style="font-size: 2.7em;">2018</span><span style="font-size: 2em;"><i class="fa fa-group" aria-hidden="true" style="color: steelblue;"></i></span></h4>
 <div class="figure">
-<img src="images/name_cloud.png" widht="70%" />
+<img src="images/name_cloud.png" style="width:75.0%" />
 
 </div>
 <p><br></p>
 <p>You are the all in this together. Use each other as a resource. Share ideas, share code, collaborate. Make bad R jokes.<br />
 <br></p>
-<p><strong>Here’s one:</strong> <em>What ’tis the pirate’s favorite letter?</em></p>
+<p><strong>Here’s one:</strong> <em>What’tis the pirate’s favorite letter?</em></p>
 <p><br></p>
 <div class="figure">
 <img src="http://photos1.blogger.com/x/blogger/1599/2546/1600/667273/R-is-for-Pirate.jpg" width="230" />
@@ -506,15 +511,16 @@ cat_df<span class="op">$</span>ages</code></pre></div>
 <h3 id="pop-quiz-hotshot" class="unnumbered">Pop Quiz, hotshot!</h3>
 <p><strong>Which of these names are valid for a new object? (Hint: You are allowed to test them.)</strong></p>
 <p><input type="radio"> <em>my cat fred</em> <br> <input type="radio"> <em>my_CAT55</em> <br> <input type="radio"> <em>5cats</em> <br> <input type="radio"> <em>my-cat</em> <br> <input type="radio"> <em>Whatever!</em> <br></p>
-<br>
-<div class="toggle">
+<br> <details> <summary>
 <button class="btn_code">
 <em>Show solution</em>
 </button>
-<p><br></p>
+</summary>
+<p>
 <p><i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>my_CAT55</code></p>
 <p><em>Yes!! That was purrfect!</em></p>
-</div>
+</p>
+</details>
 </div>
 </div>
 <div id="leave-a-comment" class="section level2">
@@ -566,15 +572,16 @@ cat_ages_mean</code></pre></div>
 <h3 id="pop-quiz" class="unnumbered">Pop Quiz!</h3>
 <p><strong>Which of these is a valid function call?</strong></p>
 <p><input type="radio"> <em>lick(“paws” “tail”)</em> <br> <input type="radio"> <em>scratch, “couch”, “door”</em> <br> <input type="radio"> <em>sleep(3, “hours”)</em> <br> <input type="radio"> <em>meow(until fed)</em> <br> <input type="radio"> <em>shed(1 million, “hairs”)</em> <br></p>
-<br>
-<div class="toggle">
+<br> <details> <summary>
 <button class="btn_code">
 <em>Show solution</em>
 </button>
-<p><br></p>
+</summary>
+<p>
 <p><i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>sleep(3, &quot;hours&quot;)</code></p>
 <p><em>Correct! You’re quite good at this.</em></p>
-</div>
+</p>
+</details>
 </div>
 </div>
 </div>
@@ -752,12 +759,14 @@ my_cat_file &lt;-<span class="st"> &quot;data/my_cats.csv&quot;</span>
 <p><strong>What data type is the <code>Color</code> column?</strong></p>
 <p><input type="radio"> <em>letters</em> <br> <input type="radio"> <em>character</em> <br> <input type="radio"> <em>words</em> <br> <input type="radio"> <em>numbers</em> <br> <input type="radio"> <em>integer</em> <br></p>
 <p><br></p>
-<div class="toggle">
+<details> <summary>
 <button class="btn_code">
 <em>Show solution</em>
 </button>
-<p><br></p>
+</summary>
+<p>
 <p><i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>character</code></p>
+<pre><code>## Colors cannot be applied in this environment :( Try using a terminal or RStudio.</code></pre>
 <pre><code>## 
 ##  -------------- 
 ## Meow! Not too shabby for a tabby. 
@@ -778,7 +787,8 @@ my_cat_file &lt;-<span class="st"> &quot;data/my_cats.csv&quot;</span>
 ##                ) )
 ##               (_(
 ## </code></pre>
-</div>
+</p>
+</details>
 </div>
 </div>
 <div id="get-help-on-functions" class="section level3">
@@ -847,27 +857,29 @@ column_names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class
 <p><br></p>
 <p><strong>What package does <code>read_csv()</code> come from?</strong></p>
 <p><input type="radio"> <em>dinosaur</em> <br> <input type="radio"> <em>get_data</em> <br> <input type="radio"> <em>readr</em> <br> <input type="radio"> <em>dplyr</em> <br> <input type="radio"> <em>tidyr</em> <br></p>
-<br>
-<div class="toggle">
+<br> <details> <summary>
 <button class="btn_code">
 <em>Show solution</em>
 </button>
-<p><br></p>
+</summary>
+<p>
 <p><i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>readr</code></p>
 <p><em>Great job! You’re fur real.</em></p>
-</div>
-<p><br><br><br></p>
+</p>
+<p></details></p>
+<p><br></p>
 <p><strong>How would you load the package <code>catfinder</code>?</strong></p>
 <p><input type="radio"> <em>catfinder()</em> <br> <input type="radio"> <em>library(“catfinder”)</em> <br> <input type="radio"> <em>load(“catfinder”)</em> <br> <input type="radio"> <em>package(“catfinder”)</em> <br></p>
-<br>
-<div class="toggle">
+<br> <details> <summary>
 <button class="btn_code">
 <em>Show solution</em>
 </button>
-<p><br></p>
+</summary>
+<p>
 <p><i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>library(&quot;catfinder&quot;)</code></p>
 <p><em>Excellent! Keep the streak going.</em></p>
-</div>
+</p>
+</details>
 </div>
 </div>
 </div>
@@ -934,12 +946,12 @@ all_cats_file &lt;-<span class="st"> &quot;data/...&quot;</span>
 
 <span class="co"># Replace the `...` with &#39;all_cats_file&#39;</span>
 all_cats &lt;-<span class="st"> </span><span class="kw">read_csv</span>(...)</code></pre></div>
-<p><br></p>
-<div class="toggle">
+<br> <details> <summary>
 <button class="btn_code">
 <em>Show solution</em>
 </button>
-<p><br></p>
+</summary>
+<p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;readr&quot;</span>)
 
 all_cats_file &lt;-<span class="st"> &quot;X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/Student Folder/missing_cat_list.csv&quot;</span>
@@ -960,9 +972,11 @@ all_cats  &lt;-<span class="st"> </span><span class="kw">read_csv</span>(all_cat
 ##   greedy = col_integer(),
 ##   owner_phone = col_character()
 ## )</code></pre>
-</div>
+</p>
+<p></details></p>
+<br>
 <div class="tip">
-<h2 id="copy-a-files-location" class="unnumbered">Copy a file’s location</h2>
+<h3 id="copy-a-files-location" class="unnumbered">Copy a file’s location</h3>
 <p>In <em>Windows</em> there’s a handy trick to copy the path to a file on your computer:</p>
 <ul>
 <li>Hold Shift + Right click on the file name. Select “Copy as path” from the menu.</li>
@@ -998,15 +1012,16 @@ all_cats  &lt;-<span class="st"> </span><span class="kw">read_csv</span>(all_cat
 <h3 id="pop-quiz-hotshot-1" class="unnumbered">Pop Quiz, hotshot!</h3>
 <p><strong>What is the second column in the <code>all_cats</code> data frame?</strong></p>
 <p><input type="radio"> <em>age</em> <br> <input type="radio"> <em>gender</em> <br> <input type="radio"> <em>nametag</em> <br> <input type="radio"> <em>color</em> <br> <input type="radio"> <em>fur</em> <br></p>
-<p><br></p>
-<div class="toggle">
+<br> <details> <summary>
 <button class="btn_code">
 <em>Show solution</em>
 </button>
-<p><br></p>
+</summary>
+<p>
 <p><i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>color</code></p>
 <p><em>You sure aren’t kitten around! Great work!</em></p>
-</div>
+</p>
+</details>
 </div>
 </div>
 </div>
@@ -1292,13 +1307,16 @@ my_fave_colors</code></pre></div>
 <p><strong>Are there more cats with the color <code>striped</code> or <code>butterscotch</code>?</strong></p>
 <p><input type="radio"> <em>more butterscotch</em> <br> <input type="radio"> <em>more striped</em> <br> <input type="radio"> <em>same amount in both groups</em> <br></p>
 <p><br> <em>Hint: Start by creating a new table called <code>striped</code> using the code <code>filter(all_cats, color == ...)</code></em> <br></p>
-<div class="toggle">
+<details> <summary>
 <button class="btn_code">
 <em>Show solution</em>
 </button>
-<p><br> <i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>more striped</code></p>
+</summary>
+<p>
+<p><i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>more striped</code></p>
 <p><em>Feline fine after that exercise! Great job!</em></p>
-</div>
+</p>
+</details>
 </div>
 </div>
 </div>
@@ -1361,21 +1379,22 @@ the_one &lt;-<span class="st"> </span><span class="kw">filter</span>(all_cats,
 <p><em>Hint: You can also use the cat’s <code>age</code> range to help narrow down the number of potential cats.</em></p>
 </blockquote>
 <p><br><br></p>
-<div id="success" class="section level3 unnumbered">
-<h3>Success!</h3>
+<div id="great-work" class="section level3 unnumbered">
+<h3>Great work!</h3>
 <br>
 <hr>
-<p>Great work! You found your cat and you’ve earned yourself a detective badge.</p>
+<p>You found your cat a home and you’ve earned yourself a detective badge.</p>
 <p><br></p>
-<p><strong>Let’s celebrate!</strong></p>
-<div class="toggle">
+<details> <summary>
 <button class="btn_code">
-~ Receive your badge ~
+<strong>Receive your badge</strong>
 </button>
-<p><br></p>
+</summary>
+<p>
 <p><img src="https://ih0.redbubble.net/image.92273350.5722/sticker,220x200-bg,ffffff-pad,220x200,ffffff.u5.jpg" width="200" align="left" style="margin-top: -20px; margin-right: 30px;"></p>
-</div>
-<p><br><br></p>
+</p>
+<p></details></p>
+<p><br></p>
 <p><span style="font-size: 22px;"> <i class="fa fa-group" aria-hidden="true" style="color:black;"></i>  <strong>Meet the R cats</strong>   <i class="fa fa-group" aria-hidden="true" style="color:black;"></i></span></p>
 <p>Let’s introduce our rescued cats.</p>
 <div>
@@ -1410,53 +1429,6 @@ the_one &lt;-<span class="st"> </span><span class="kw">filter</span>(all_cats,
 </blockquote>
 </div>
 </div>
-</div>
-<div id="bonus-level" class="section level1 unnumbered">
-<h1><i class="fa fa-star" style="color:#ffff00"></i> <i class="fa fa-star" style="color:#ffff00"></i> Bonus level!! <i class="fa fa-star" style="color:#ffff00"></i> <i class="fa fa-star" style="color:#ffff00"></i></h1>
-<p>R wasn’t made to only look at cat data, but if that’s your thing there’s certainly more great cat data to be found. Other free data sets are also available online and in R packages <em>(try typing <code>starwars</code> after you’ve loaded the <strong>dplyr</strong> package)</em>. One big advantage of CSVs is that you can easily share them online. Once there, researchers and collaborators can easily read your data directly into their own R session using the data’s URL.</p>
-<p>Kaggle <a href="https://www.kaggle.com/datasets">datasets</a> is one great resource for interesting data. The example below shows a data set of the top 5,000 rated movies on IMDB.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;readr&quot;</span>)
-
-<span class="co"># Below is a IMDB movie file stored on the internet as a CSV</span>
-movie_url &lt;-<span class="st"> &quot;https://raw.githubusercontent.com/MPCA-air/RCamp/master/data/movies/IMDB.csv&quot;</span>
-
-
-<span class="co"># Read the IMDB movie data and save as `movies`</span>
-movies &lt;-<span class="st"> </span><span class="kw">read_csv</span>(movie_url)</code></pre></div>
-<p><br></p>
-<p>Your challenge is to load the movie data (or use one of your own) and to practice using the <code>filter()</code>, <code>arrange()</code>, <code>mutate()</code>, and <code>summarize()</code> functions. When you’ve run out of time, save your script as “my_name.R” to this folder — <code>X:\Agency_Files\Data_Services\DAU\Data Analytics User Group\Shared\r\training\RCamp\Day1\Student scripts</code>.</p>
-<blockquote>
-<p>Add your data file as well if it isn’t already on the X-drive.</p>
-</blockquote>
-<p><br></p>
-<p><strong>Create a new R script that answers a few questions about your data set: </strong></p>
-<ol style="list-style-type: decimal">
-<li>How many rows are in your data set?</li>
-<li>What are the column names?</li>
-<li>Find a mean of a single column.</li>
-<li>Use <code>group_by()</code> to summarize()` the values of a column based on a group it’s in.</li>
-<li>Use <code>mutate()</code> to convert one of your columns into a different unit (e.g. <code>lbs</code> to <code>Millions of lbs</code> or <code>grams</code> to <code>kilograms</code>).</li>
-<li><code>filter()</code> your data to a single category.</li>
-<li>Use <code>%in%</code> to filter your data to a few categories.</li>
-<li>Make up a question of your own and try to answer it using the data.</li>
-</ol>
-<blockquote>
-<p><em>Did answering these questions raise new questions about your data?</em></p>
-</blockquote>
-<p>Add some of these questions to your script using comments <code>#</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Why does Facility A have no emissions?</span>
-<span class="co"># What happened to the County value for some monitors?</span>
-<span class="co"># Is this site really a million times bigger than that site??</span></code></pre></div>
-<p><strong>Some additional movie questions if you’re using the IMDB data: </strong></p>
-<ol style="list-style-type: decimal">
-<li>What were the highest and lowest grossing movies in this database?</li>
-<li>What actor or actress appears the most times in this database as actor1?</li>
-<li>How many Facebook likes has this actor or actress received?</li>
-<li>Filter the data set to your favorite movie, or a movie you have seen. What is the duration of that movie?<br />
-</li>
-<li>What movie has the longest duration? the shortest? Make a table including only the directors and the mean duration of their movies.</li>
-</ol>
-<p><br></p>
 </div>
 <div id="survey-says" class="section level1 unnumbered">
 <h1>Survey says</h1>
@@ -1497,14 +1469,12 @@ movies &lt;-<span class="st"> </span><span class="kw">read_csv</span>(movie_url)
 <img src="https://s5.favim.com/orig/69/balloons-cat-colours-cute-Favim.com-623053.jpg" />
 
 </div>
-<p>Return to <a href="index.html">RCamp</a></p>
 <p><br></p>
-<script>
-  $(".btn_code").click(function() {
-    $(this.parentNode).toggleClass("open");
-  });
-</script>
 </div>
+</div>
+<div id="return-to-rcamp" class="section level1 unnumbered">
+<h1>Return to <a href="index.html">RCamp</a></h1>
+<p><br></p>
 </div>
 
 

@@ -28,7 +28,7 @@ This workshop is available online at
 
 The messy data examples can be downloaded from here
 
-> https://mpca-air.github.io/RCamp/data/messy_data
+> https://github.com/MPCA-air/RCamp/tree/master/data/messy_data
 
 # Tidy data
 <hr>
