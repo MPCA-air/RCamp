@@ -23,7 +23,9 @@
 <link href="02_Day2_ggplot_charts_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="02_Day2_ggplot_charts_files/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="02_Day2_ggplot_charts_files/navigation-1.1/tabsets.js"></script>
-<link href="02_Day2_ggplot_charts_files/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="02_Day2_ggplot_charts_files/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="02_Day2_ggplot_charts_files/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="02_Day2_ggplot_charts_files/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
 
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -120,6 +122,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -498,7 +503,7 @@ all_cats &lt;-<span class="st"> </span><span class="kw">mutate</span>(all_cats,
 </div>
 <p><br></p>
 <p>In a script the <code>%&gt;%</code> is read as “and then”. In the code below we are telling R to <code>mutate</code> the data <strong>and then</strong> to <code>filter</code> it.</p>
-<p><br><br></p>
+<p><br></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">nei_cat &lt;-<span class="st"> </span><span class="kw">mutate</span>(all_cats, 
                   <span class="dt">clumsy_and_greedy  =</span> clumsy <span class="op">+</span><span class="st"> </span>greedy,
                   <span class="dt">grumpy_and_playful =</span> grumpy <span class="op">+</span><span class="st"> </span>playful,
@@ -506,21 +511,18 @@ all_cats &lt;-<span class="st"> </span><span class="kw">mutate</span>(all_cats,
 <span class="st">           </span><span class="kw">filter</span>(clumsy_and_greedy  <span class="op">&gt;</span><span class="st"> </span><span class="dv">12</span>,
                   grumpy_and_playful <span class="op">==</span><span class="st"> </span><span class="dv">6</span>,
                   human_age <span class="op">&gt;</span><span class="st"> </span><span class="dv">80</span>)</code></pre></div>
-<p><br></p>
 <div class="quiz">
 <h3 id="pop-quiz-hotshot" class="unnumbered">Pop Quiz, hotshot!</h3>
 <p><em>What is the name of your friend’s cat?</em></p>
 <p><input type="radio"> <em>Damon</em> <br> <input type="radio"> <em>Fluffy George</em> <br> <input type="radio"> <em>Stinkerbell</em> <br> <input type="radio"> <em>Precious Abe</em> <br></p>
 <p><br></p>
-<div class="toggle">
-<button class="btn_code">
-<em>Show solution</em>
-</button>
-<p><br> <i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>Fluffy George</code></p>
+<details> <summary class = "btn_code"><em>Show solution</em></summary>
+<p>
+<p><i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>Fluffy George</code></p>
 <p><em>Breaking Meows! You rock!</em></p>
+</p>
+</details>
 </div>
-</div>
-<p><br></p>
 </div>
 </div>
 <div id="the-case-of-the-baby-tigers" class="section level1">
@@ -822,17 +824,16 @@ movies &lt;-<span class="st"> </span><span class="kw">rename</span>(movies, <spa
 <div id="exercise-4" class="section level4 unnumbered">
 <h4>Exercise <i class="fa fa-bicycle" aria-hidden="true" style="color: green"></i></h4>
 <p>Make a scatterplot of <code>imdb_score</code> and <code>gross_mil</code> with a fitted line showing the relationship.</p>
-<div class="toggle">
-<button class="btn_code">
-<em>Show solution</em>
-</button>
-<p><br> Stop cheating! Just kidding here’s some code to help.</p>
+<details> <summary class = "btn_code"><em>Show solution</em></summary>
+<p>
+<p>Stop cheating! Just kidding here’s some code to help.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">filter</span>(movies, title_year <span class="op">&gt;=</span><span class="st"> </span><span class="dv">2010</span>) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> imdb_score, <span class="dt">y =</span> gross_mil)) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.25</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</code></pre></div>
-<p><img src="02_Day2_ggplot_charts_files/figure-html/unnamed-chunk-23-1.png" width="960" /></p>
-</div>
+<img src="02_Day2_ggplot_charts_files/figure-html/unnamed-chunk-23-1.png" width="960" />
+</p>
+<p></details></p>
 <p><br></p>
 </div>
 </div>
@@ -882,11 +883,8 @@ movies &lt;-<span class="st"> </span><span class="kw">rename</span>(movies, <spa
 <p>Make a histogram of the number of movies by decade with separate <code>fill</code> colors for each <code>content_rating</code>.</p>
 <p>Decide which is the best way to present the bars: <em>stacked, side-by-side, or on separate charts.</em></p>
 <p><br></p>
-<div class="toggle">
-<button class="btn_code">
-<em>Show solution</em>
-</button>
-<p><br></p>
+<details> <summary class = "btn_code"><em>Show solution</em></summary>
+<p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Stacked</span>
 <span class="kw">ggplot</span>(movies, <span class="kw">aes</span>(title_year, <span class="dt">fill =</span> content_rating)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="dv">10</span>) 
@@ -904,8 +902,8 @@ movies &lt;-<span class="st"> </span><span class="kw">rename</span>(movies, <spa
 <span class="kw">ggplot</span>(movies, <span class="kw">aes</span>(title_year, <span class="dt">fill =</span> content_rating)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="dv">10</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">facet_wrap</span>( <span class="op">~</span><span class="st"> </span>content_rating, <span class="dt">scales =</span> <span class="st">&quot;free_y&quot;</span>)</code></pre></div>
-</div>
-<p><br></p>
+</p>
+<p></details> <br></p>
 </div>
 </div>
 </div>
@@ -923,11 +921,11 @@ movies &lt;-<span class="st"> </span><span class="kw">rename</span>(movies, <spa
 <li>If the number you get is bigger than <code>0.2</code>, email your charts to the rest of the class.</li>
 </ul></li>
 </ol>
-<script>
-  $(".btn_code").click(function() {
-    $(this.parentNode).toggleClass("open");
-  });
-</script>
+<p><br></p>
+</div>
+<div id="return-to-rcamp" class="section level1 unnumbered">
+<h1>Return to <a href="index.html">RCamp</a></h1>
+<p><br></p>
 </div>
 
 

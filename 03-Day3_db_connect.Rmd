@@ -213,14 +213,15 @@ According to TEMPO, which Municipality is the facilty 'BrandFX LLC' located in?
 <br>
 
 
-<div class="toggle"><button class = "btn_code">_Show solution_</button>
-<br>
+<details>
+<summary class = "btn_code">_Show solution_</summary>
+<p>
 
 <i class="fa fa-check" aria-hidden="true" style="color: green;"></i> `Dunnell` 
 
 _You sure aren't kitten around! Great work!_
 
-</div>
+</p></details>
 
 <br>
 
@@ -668,10 +669,5 @@ ggplot(top_directors[1:10, ], aes(director_name, award_count)) + geom_col() + sc
 <br>
 
 
-_You've reached the end of this path. Return to the top of the page and keep searching._
+_You've reached the end of this path. Return to the top of the page and continue searching._
 
-<script>
-  $(".btn_code").click(function() {
-    $(this.parentNode).toggleClass("open");
-  });
-</script> 

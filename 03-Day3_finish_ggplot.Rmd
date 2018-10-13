@@ -372,8 +372,9 @@ Make boxplots comparing the range of `gross_mil` between `movie_color` (black an
 
 <br>
 
-<div class="toggle"><button class = "btn_code">_Show solution_</button>
-<br>
+<details>
+<summary class = "btn_code">_Show solution_</summary>
+<p>
 ```{r}
 ggplot(movies, aes(x = movie_color, y = gross_mil)) +
   scale_y_log10() + 
@@ -381,7 +382,7 @@ ggplot(movies, aes(x = movie_color, y = gross_mil)) +
   geom_boxplot(outlier.color = NA, alpha = 0.8)
 
 ```
-</div>
+</p></details>
 
 
 
@@ -440,9 +441,9 @@ _Hint: Update to `label = round(mean_score, digits = 1))` to make labels legible
 #### Exercise _(extra credit)_ <i class="fa fa-bicycle" aria-hidden="true" style="color: green"></i> {-}
 Create a summarized data set and bar chart of the mean budget by `content_type`.
 
-<div class="toggle"><button class = "btn_code">_Show solution_</button>
-
-<br>
+<details>
+<summary class = "btn_code">_Show solution_</summary>
+<p>
 
 ```{r}
 budget_by_content <- movies %>% 
@@ -456,7 +457,7 @@ ggplot(budget_by_content, aes(x = content_rating, y = mean_budget_round)) +
 
 ```
 
-</div>
+</p></details>
 
 
 <br>
@@ -465,9 +466,9 @@ ggplot(budget_by_content, aes(x = content_rating, y = mean_budget_round)) +
 
 #### the BIG profit chart _(try_ _after class)_
 
-<div class="toggle"><button class = "btn_code">_Show BIG profit chart_</button>
-
-<br>
+<details>
+<summary class = "btn_code">_Show BIG profit chart_</summary>
+<p>
 
 ### Add a profit column
 ```{r}
@@ -524,7 +525,7 @@ ggplot(movies, aes(x = title_year,  y = profit)) +
 
 ```
 
-</div>
+</p></details>
 
 
 # Plot summary
@@ -923,11 +924,9 @@ _Ref: [http://stat545.com/](http://stat545.com/block017_write-figure-to-file.htm
 
 ### Good luck!
 
-```{r, eval = F, echo = F}
-## Ignore the script below. It's for the buttons. #############################
-```
-<script>
-  $(".btn_code").click(function() {
-    $(this.parentNode).toggleClass("open");
-  });
-</script> 
+<br><br>
+
+# Return to [RCamp](index.html) {-}
+
+<br>
+

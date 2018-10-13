@@ -23,7 +23,9 @@
 <link href="03-Day3_finish_ggplot_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="03-Day3_finish_ggplot_files/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="03-Day3_finish_ggplot_files/navigation-1.1/tabsets.js"></script>
-<link href="03-Day3_finish_ggplot_files/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="03-Day3_finish_ggplot_files/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="03-Day3_finish_ggplot_files/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="03-Day3_finish_ggplot_files/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
 
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -120,6 +122,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -562,17 +567,15 @@ movies &lt;-<span class="st"> </span><span class="kw">mutate</span>(movies,
 <h4>Exercise</h4>
 <p>Make boxplots comparing the range of <code>gross_mil</code> between <code>movie_color</code> (black and white films vs. color films).</p>
 <p><br></p>
-<div class="toggle">
-<button class="btn_code">
-<em>Show solution</em>
-</button>
-<p><br></p>
+<details> <summary class = "btn_code"><em>Show solution</em></summary>
+<p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(movies, <span class="kw">aes</span>(<span class="dt">x =</span> movie_color, <span class="dt">y =</span> gross_mil)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_y_log10</span>() <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_jitter</span>(<span class="dt">alpha =</span> <span class="fl">0.1</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">outlier.color =</span> <span class="ot">NA</span>, <span class="dt">alpha =</span> <span class="fl">0.8</span>)</code></pre></div>
-<p><img src="03-Day3_finish_ggplot_files/figure-html/unnamed-chunk-16-1.png" width="864" /></p>
-</div>
+<img src="03-Day3_finish_ggplot_files/figure-html/unnamed-chunk-16-1.png" width="864" />
+</p>
+<p></details></p>
 </div>
 </div>
 </div>
@@ -620,11 +623,8 @@ movies &lt;-<span class="st"> </span><span class="kw">mutate</span>(movies,
 <div id="exercise-extra-credit" class="section level4 unnumbered">
 <h4>Exercise <em>(extra credit)</em> <i class="fa fa-bicycle" aria-hidden="true" style="color: green"></i></h4>
 <p>Create a summarized data set and bar chart of the mean budget by <code>content_type</code>.</p>
-<div class="toggle">
-<button class="btn_code">
-<em>Show solution</em>
-</button>
-<p><br></p>
+<details> <summary class = "btn_code"><em>Show solution</em></summary>
+<p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">budget_by_content &lt;-<span class="st"> </span>movies <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">                     </span><span class="kw">group_by</span>(content_rating) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">                     </span><span class="kw">summarize</span>(<span class="dt">mean_budget         =</span> <span class="kw">mean</span>(budget, <span class="dt">na.rm =</span> T) <span class="op">/</span><span class="st"> </span><span class="dv">1000000</span>,
@@ -634,7 +634,8 @@ movies &lt;-<span class="st"> </span><span class="kw">mutate</span>(movies,
 <span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_label</span>(<span class="kw">aes</span>(<span class="dt">label =</span> mean_budget_round))</code></pre></div>
 <p><img src="03-Day3_finish_ggplot_files/figure-html/unnamed-chunk-20-1.png" width="864" /></p>
-</div>
+</p>
+<p></details></p>
 <p><br></p>
 </div>
 </div>
@@ -642,19 +643,22 @@ movies &lt;-<span class="st"> </span><span class="kw">mutate</span>(movies,
 <h2>Just for fun…</h2>
 <div id="the-big-profit-chart-try-after-class" class="section level4">
 <h4>the BIG profit chart <em>(try</em> <em>after class)</em></h4>
-<div class="toggle">
-<button class="btn_code">
-<em>Show BIG profit chart</em>
-</button>
-<p><br></p>
-<h3 id="add-a-profit-column">Add a profit column</h3>
+<details> <summary class = "btn_code"><em>Show BIG profit chart</em></summary>
+<p>
+</div>
+<div id="add-a-profit-column" class="section level3">
+<h3>Add a profit column</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">movies &lt;-<span class="st"> </span><span class="kw">mutate</span>(movies, 
                  <span class="dt">profit     =</span> gross <span class="op">-</span><span class="st"> </span>budget,
                  <span class="dt">profit_mil =</span> profit <span class="op">/</span><span class="st"> </span><span class="dv">1000000</span>)</code></pre></div>
-<h3 id="plot-the-profit-of-every-film">Plot the profit of every film</h3>
+</div>
+<div id="plot-the-profit-of-every-film" class="section level3">
+<h3>Plot the profit of every film</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(movies, <span class="kw">aes</span>(<span class="dt">x =</span> title_year,  <span class="dt">y =</span> profit)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_jitter</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</code></pre></div>
 <p><img src="03-Day3_finish_ggplot_files/figure-html/unnamed-chunk-22-1.png" width="864" /></p>
-<h3 id="label-the-top-and-bottom-12-percentile-of-movies">Label the top and bottom 1/2 percentile of movies</h3>
+</div>
+<div id="label-the-top-and-bottom-12-percentile-of-movies" class="section level3">
+<h3>Label the top and bottom 1/2 percentile of movies</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(movies, <span class="kw">aes</span>(<span class="dt">x =</span> title_year,  <span class="dt">y =</span> profit)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_jitter</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_label</span>(<span class="kw">aes</span>(<span class="dt">x =</span> title_year,  
@@ -669,7 +673,9 @@ movies &lt;-<span class="st"> </span><span class="kw">mutate</span>(movies,
        <span class="dt">y      =</span> <span class="st">&quot;Profit in U.S. dollars&quot;</span>,
        <span class="dt">x      =</span> <span class="st">&quot;year&quot;</span>)</code></pre></div>
 <p><img src="03-Day3_finish_ggplot_files/figure-html/unnamed-chunk-23-1.png" width="864" /></p>
-<h3 id="label-them-all">Label them all!</h3>
+</div>
+<div id="label-them-all" class="section level3">
+<h3>Label them all!</h3>
 <p><strong>Warning!</strong> This adds thousands of labels and may stall your computer for a few minutes. You have been warned.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(hrbrthemes)  <span class="co">#install.packages(hrbrthemes)</span>
 <span class="kw">library</span>(scales)      <span class="co"># For the $ dollar_format() labels</span>
@@ -688,7 +694,8 @@ movies &lt;-<span class="st"> </span><span class="kw">mutate</span>(movies,
 <span class="st">  </span><span class="kw">theme_ipsum_rc</span>() <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">theme</span>(<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">24</span>)) <span class="co"># Increase title size</span></code></pre></div>
 <p><img src="03-Day3_finish_ggplot_files/figure-html/unnamed-chunk-24-1.png" width="864" /></p>
-</div>
+</p>
+<p></details></p>
 </div>
 </div>
 </div>
@@ -945,12 +952,12 @@ myplot</code></pre></div>
 </ol>
 <div id="good-luck" class="section level3">
 <h3>Good luck!</h3>
-<script>
-  $(".btn_code").click(function() {
-    $(this.parentNode).toggleClass("open");
-  });
-</script>
+<p><br><br></p>
 </div>
+</div>
+<div id="return-to-rcamp" class="section level1 unnumbered">
+<h1>Return to <a href="index.html">RCamp</a></h1>
+<p><br></p>
 </div>
 
 

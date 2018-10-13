@@ -23,7 +23,9 @@
 <link href="03-Day3_db_connect_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="03-Day3_db_connect_files/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="03-Day3_db_connect_files/navigation-1.1/tabsets.js"></script>
-<link href="03-Day3_db_connect_files/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="03-Day3_db_connect_files/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="03-Day3_db_connect_files/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="03-Day3_db_connect_files/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
 
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -120,6 +122,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -305,32 +310,24 @@ div.tocify {
 <span class="kw">library</span>(RODBC)
 
 <span class="kw">odbcDataSources</span>()</code></pre></div>
-<pre><code>##                                              Excel Files 
+<pre><code>##                                              dBASE Files 
+##    &quot;Microsoft Access dBASE Driver (*.dbf, *.ndx, *.mdx)&quot; 
+##                                              Excel Files 
 ## &quot;Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)&quot; 
 ##                                       MS Access Database 
 ##               &quot;Microsoft Access Driver (*.mdb, *.accdb)&quot; 
-##                                              dBASE Files 
-##    &quot;Microsoft Access dBASE Driver (*.dbf, *.ndx, *.mdx)&quot; 
 ##                                       LakesXMLDataSource 
 ##                                &quot;CR ODBC XML Driver 4.20&quot; 
-##                                                   LIMS32 
-##                              &quot;Microsoft ODBC for Oracle&quot; 
-##                                                    delta 
-##                           &quot;Oracle in OraClient11g_home2&quot; 
-##                                                   delta2 
-##                              &quot;Microsoft ODBC for Oracle&quot; 
-##                                                   rapids 
-##                           &quot;Oracle in OraClient11g_home2&quot; 
 ##                                            PostgreSQL35W 
 ##                                &quot;PostgreSQL Unicode(x64)&quot; 
-##                                                  weather 
-##                             &quot;MySQL ODBC 5.3 ANSI Driver&quot; 
+##                                                   onbase 
+##                           &quot;Oracle in OraClient11g_home1&quot; 
+##                                                  onbaset 
+##                           &quot;Oracle in OraClient11g_home1&quot; 
+##                                                  onbased 
+##                           &quot;Oracle in OraClient11g_home1&quot; 
 ##                                                   deltaw 
-##                           &quot;Oracle in OraClient11g_home2&quot; 
-##                                                   mnrisk 
-##                           &quot;Firebird/InterBase(r) driver&quot; 
-##                               Sample Amazon Redshift DSN 
-##                                  &quot;Amazon Redshift (x64)&quot;</code></pre>
+##                           &quot;Oracle in OraClient11g_home1&quot;</code></pre>
 <p><br></p>
 <p>To connect to <code>deltaw</code> use the function <code>odbcConnect()</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)
@@ -360,37 +357,37 @@ deltaw &lt;-<span class="st"> </span><span class="kw">odbcConnect</span>(<span c
 ##  [10] &quot;CNELSON1&quot;             &quot;CORE_SDW&quot;             &quot;CORE_WU&quot;             
 ##  [13] &quot;CORE_WU_LINK_USER&quot;    &quot;COREUSER&quot;             &quot;CSW&quot;                 
 ##  [16] &quot;CTOP_DELTA&quot;           &quot;CWU&quot;                  &quot;DB_COMMENTS&quot;         
-##  [19] &quot;DOCTRACK&quot;             &quot;ENF_DB&quot;               &quot;ENV_STDS&quot;            
-##  [22] &quot;ENV_STDS_LINK_USER&quot;   &quot;EQUIS&quot;                &quot;EQUIS_TEST&quot;          
-##  [25] &quot;EQUIS_USER&quot;           &quot;EQUISDW&quot;              &quot;EQUISDW2&quot;            
-##  [28] &quot;EQUISFE&quot;              &quot;EQUISPU&quot;              &quot;EQUISRO&quot;             
-##  [31] &quot;ETRACK&quot;               &quot;FILE_MGT&quot;             &quot;GRANTS_DATA&quot;         
-##  [34] &quot;HERE_FLOW&quot;            &quot;HW_DELTA&quot;             &quot;INCIDENT&quot;            
-##  [37] &quot;ISW&quot;                  &quot;MIG_AQ_POST_R1&quot;       &quot;MIG_AQ_POST_R2_CE&quot;   
-##  [40] &quot;MIG_CNVD&quot;             &quot;MIG_DELTA&quot;            &quot;MIG_DELTA_R2&quot;        
-##  [43] &quot;MIG_DELTA_R3&quot;         &quot;MIG_DELTA_R4&quot;         &quot;MIG_EDMS&quot;            
-##  [46] &quot;MPCA_BOL&quot;             &quot;MPCA_DAL&quot;             &quot;MPCA_REPORT&quot;         
-##  [49] &quot;NAGIOS_ADMIN&quot;         &quot;NCT&quot;                  &quot;NIGHTLY&quot;             
-##  [52] &quot;NODE_FLOW&quot;            &quot;NODE_FLOW_LINK_USER&quot;  &quot;NODE_FLOW_USR&quot;       
-##  [55] &quot;ONBASE_LINK&quot;          &quot;OPAL&quot;                 &quot;PCASEND&quot;             
-##  [58] &quot;PEST&quot;                 &quot;PROJECT_TRACKING&quot;     &quot;PUBLIC&quot;              
-##  [61] &quot;RAPIDS&quot;               &quot;RESTFUL_UTIL&quot;         &quot;RSP&quot;                 
-##  [64] &quot;SA_DATA&quot;              &quot;SDW_UTIL&quot;             &quot;SPATIAL_PROD&quot;        
-##  [67] &quot;SR_DELTA&quot;             &quot;SUPERAPIDS&quot;           &quot;SW_DELTA&quot;            
-##  [70] &quot;SYS&quot;                  &quot;SYSTEM&quot;               &quot;TABLEAU&quot;             
-##  [73] &quot;TACS&quot;                 &quot;TANKS&quot;                &quot;TEMPO&quot;               
-##  [76] &quot;TEMPO_MIG&quot;            &quot;TEMPO_MN_CORE_WU&quot;     &quot;TEMPO_MN_LB&quot;         
-##  [79] &quot;TEMPO_MN_QUEUE&quot;       &quot;TEMPO_MN_RAPIDS&quot;      &quot;TEMPO_MN_UTIL&quot;       
-##  [82] &quot;TEMPOAP&quot;              &quot;TEMPOBP&quot;              &quot;THE_CRANK&quot;           
-##  [85] &quot;TIM_UPD&quot;              &quot;TOAD&quot;                 &quot;WH_AQ_EDA&quot;           
-##  [88] &quot;WH_CSW&quot;               &quot;WH_CSW_2&quot;             &quot;WH_GROUNDWATER&quot;      
-##  [91] &quot;WH_HAZARDOUS_WASTE&quot;   &quot;WH_HAZARDOUS_WASTE_2&quot; &quot;WH_ISW&quot;              
-##  [94] &quot;WH_ISW_2&quot;             &quot;WH_ONBASE&quot;            &quot;WH_SSTS&quot;             
-##  [97] &quot;WH_SURFACEWATER&quot;      &quot;WH_SURFACEWATER_2&quot;    &quot;WH_TANKS&quot;            
-## [100] &quot;WH_TANKS_2&quot;           &quot;WH_TEMPO&quot;             &quot;WH_WIMN_2&quot;           
-## [103] &quot;WIMN&quot;                 &quot;WIX&quot;                  &quot;WJPORTER&quot;            
-## [106] &quot;WQ_ASSESS&quot;            &quot;WQ_ASSESS_LINK_USER&quot;  &quot;WQ_BIO&quot;              
-## [109] &quot;WQ_DELTA&quot;             &quot;WQISTS&quot;</code></pre>
+##  [19] &quot;DOCTRACK&quot;             &quot;ELM&quot;                  &quot;ENF_DB&quot;              
+##  [22] &quot;ENV_STDS&quot;             &quot;ENV_STDS_LINK_USER&quot;   &quot;EQUIS&quot;               
+##  [25] &quot;EQUIS_TEST&quot;           &quot;EQUIS_USER&quot;           &quot;EQUISDW&quot;             
+##  [28] &quot;EQUISDW2&quot;             &quot;EQUISFE&quot;              &quot;EQUISPU&quot;             
+##  [31] &quot;EQUISRO&quot;              &quot;ETRACK&quot;               &quot;FILE_MGT&quot;            
+##  [34] &quot;GRANTS_DATA&quot;          &quot;HERE_FLOW&quot;            &quot;HW_DELTA&quot;            
+##  [37] &quot;INCIDENT&quot;             &quot;ISW&quot;                  &quot;MIG_AQ_POST_R1&quot;      
+##  [40] &quot;MIG_AQ_POST_R2_CE&quot;    &quot;MIG_CNVD&quot;             &quot;MIG_DELTA&quot;           
+##  [43] &quot;MIG_DELTA_R2&quot;         &quot;MIG_DELTA_R3&quot;         &quot;MIG_DELTA_R4&quot;        
+##  [46] &quot;MIG_EDMS&quot;             &quot;MPCA_BOL&quot;             &quot;MPCA_DAL&quot;            
+##  [49] &quot;MPCA_REPORT&quot;          &quot;NAGIOS_ADMIN&quot;         &quot;NCT&quot;                 
+##  [52] &quot;NIGHTLY&quot;              &quot;NODE_FLOW&quot;            &quot;NODE_FLOW_LINK_USER&quot; 
+##  [55] &quot;NODE_FLOW_USR&quot;        &quot;ONBASE_LINK&quot;          &quot;OPAL&quot;                
+##  [58] &quot;PCASEND&quot;              &quot;PEST&quot;                 &quot;PROJECT_TRACKING&quot;    
+##  [61] &quot;PUBLIC&quot;               &quot;RAPIDS&quot;               &quot;RESTFUL_UTIL&quot;        
+##  [64] &quot;RSP&quot;                  &quot;SA_DATA&quot;              &quot;SDW_UTIL&quot;            
+##  [67] &quot;SPATIAL_PROD&quot;         &quot;SR_DELTA&quot;             &quot;SUPERAPIDS&quot;          
+##  [70] &quot;SW_DELTA&quot;             &quot;SYS&quot;                  &quot;SYSTEM&quot;              
+##  [73] &quot;TABLEAU&quot;              &quot;TACS&quot;                 &quot;TANKS&quot;               
+##  [76] &quot;TEMPO&quot;                &quot;TEMPO_MIG&quot;            &quot;TEMPO_MN_CORE_WU&quot;    
+##  [79] &quot;TEMPO_MN_LB&quot;          &quot;TEMPO_MN_QUEUE&quot;       &quot;TEMPO_MN_RAPIDS&quot;     
+##  [82] &quot;TEMPO_MN_UTIL&quot;        &quot;TEMPOAP&quot;              &quot;TEMPOBP&quot;             
+##  [85] &quot;THE_CRANK&quot;            &quot;TIM_UPD&quot;              &quot;TOAD&quot;                
+##  [88] &quot;WH_AQ_EDA&quot;            &quot;WH_CSW&quot;               &quot;WH_CSW_2&quot;            
+##  [91] &quot;WH_GROUNDWATER&quot;       &quot;WH_HAZARDOUS_WASTE&quot;   &quot;WH_HAZARDOUS_WASTE_2&quot;
+##  [94] &quot;WH_ISW&quot;               &quot;WH_ISW_2&quot;             &quot;WH_ONBASE&quot;           
+##  [97] &quot;WH_SSTS&quot;              &quot;WH_SURFACEWATER&quot;      &quot;WH_SURFACEWATER_2&quot;   
+## [100] &quot;WH_TANKS&quot;             &quot;WH_TANKS_2&quot;           &quot;WH_TEMPO&quot;            
+## [103] &quot;WH_WIMN_2&quot;            &quot;WIMN&quot;                 &quot;WIX&quot;                 
+## [106] &quot;WJPORTER&quot;             &quot;WQ_ASSESS&quot;            &quot;WQ_ASSESS_LINK_USER&quot; 
+## [109] &quot;WQ_BIO&quot;               &quot;WQ_DELTA&quot;             &quot;WQISTS&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># View the tables inside the Warehouse TEMPO schema</span>
 tbl_list_wh &lt;-<span class="st"> </span><span class="kw">sqlTables</span>(deltaw, <span class="dt">schema =</span> <span class="st">&quot;WH_TEMPO&quot;</span>)
 
@@ -409,8 +406,8 @@ feedlots  &lt;-<span class="st"> </span><span class="kw">sqlQuery</span>(deltaw,
 <th align="right">INT_DOC_ID</th>
 <th align="left">MASTER_AI_NAME</th>
 <th align="left">AI_PROGRAM_LIST</th>
+<th align="left">FEEDLOT_STATUS</th>
 <th align="left">REG_ACTIVITY_ID</th>
-<th align="left">REG_NUM</th>
 </tr>
 </thead>
 <tbody>
@@ -419,48 +416,48 @@ feedlots  &lt;-<span class="st"> </span><span class="kw">sqlQuery</span>(deltaw,
 <td align="right">0</td>
 <td align="left">Sustane Compost Facility</td>
 <td align="left">FE</td>
+<td align="left">active</td>
 <td align="left">REG20100001</td>
-<td align="left">049-98500</td>
 </tr>
 <tr class="even">
 <td align="right">1025</td>
 <td align="right">0</td>
 <td align="left">Luoma Egg Ranch Inc</td>
 <td align="left">CS, FE, HW, SA, UT</td>
+<td align="left">active</td>
 <td align="left">REG20110001</td>
-<td align="left">115-96320</td>
 </tr>
 <tr class="odd">
 <td align="right">1701</td>
 <td align="right">0</td>
 <td align="left">Blair West Site</td>
 <td align="left">EV, FE, WW</td>
+<td align="left">active</td>
 <td align="left">REG20150002</td>
-<td align="left">121-62454</td>
 </tr>
 <tr class="even">
 <td align="right">1915</td>
 <td align="right">0</td>
 <td align="left">Heartland Hutterian Brethren/Heartland Colonies</td>
 <td align="left">FE, HW, RR, SW, WW</td>
+<td align="left">active</td>
 <td align="left">REG20140001</td>
-<td align="left">117-50010</td>
 </tr>
 <tr class="odd">
 <td align="right">1923</td>
 <td align="right">0</td>
 <td align="left">Feikema Farms Home</td>
 <td align="left">FE</td>
+<td align="left">active</td>
 <td align="left">REG20140001</td>
-<td align="left">133-77460</td>
 </tr>
 <tr class="even">
 <td align="right">1925</td>
 <td align="right">0</td>
 <td align="left">Gabrielson Paul</td>
 <td align="left">FE</td>
+<td align="left">inactive</td>
 <td align="left">NA</td>
-<td align="left">MN0031976</td>
 </tr>
 </tbody>
 </table>
@@ -588,14 +585,12 @@ feedlots  &lt;-<span class="st"> </span><span class="kw">sqlQuery</span>(deltaw,
 <p>According to TEMPO, which Municipality is the facilty ‘BrandFX LLC’ located in?</p>
 <p><input type="radio"> <em>There is no <code>BrandFX LLC</code> facility.</em> <br> <input type="radio"> <em>Dunnell</em> <br> <input type="radio"> <em>St. Louis</em> <br> <input type="radio"> <em>Mahnomen</em> <br> <input type="radio"> <em>Walker</em> <br></p>
 <p><br></p>
-<div class="toggle">
-<button class="btn_code">
-<em>Show solution</em>
-</button>
-<p><br></p>
+<details> <summary class = "btn_code"><em>Show solution</em></summary>
+<p>
 <p><i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>Dunnell</code></p>
 <p><em>You sure aren’t kitten around! Great work!</em></p>
-</div>
+</p>
+<p></details></p>
 <p><br></p>
 </div>
 </div>
@@ -732,7 +727,7 @@ sw_wide &lt;-<span class="st"> </span><span class="kw">spread</span>(sw, CHEMICA
 ##   LOC_NAME SAMPLE_DATE  REPORT_RESULT_U~ `Dissolved oxyg~ `Temperature, w~
 ##   &lt;chr&gt;    &lt;chr&gt;        &lt;chr&gt;                       &lt;dbl&gt;            &lt;dbl&gt;
 ## 1 14MN060  7/21/2016 1~ deg C                       NA                23.9
-## 2 14MN060  7/21/2016 1~ mg/L                         7.10             NA  
+## 2 14MN060  7/21/2016 1~ mg/L                         7.1              NA  
 ## 3 14MN060  8/3/2016 10~ deg C                       NA                25.4
 ## 4 14MN060  8/3/2016 10~ mg/L                         7.27             NA  
 ## 5 14MN080  6/30/2016 1~ deg C                       NA                19.1
@@ -748,12 +743,12 @@ sw_wide &lt;-<span class="st"> </span><span class="kw">spread</span>(sw, CHEMICA
 <pre><code>## # A tibble: 6 x 4
 ##   LOC_NAME SAMPLE_DATE           `Dissolved oxygen (DO)` `Temperature, wa~
 ##   &lt;chr&gt;    &lt;chr&gt;                                   &lt;dbl&gt;             &lt;dbl&gt;
-## 1 14MN060  7/21/2016 11:30:00 AM                    7.10            23.9  
-## 2 14MN060  8/3/2016 10:50:00 AM                     7.27            25.4  
-## 3 14MN080  6/30/2016 1:50:00 PM                     8.48            19.1  
-## 4 14MN081  3/2/2016 2:00:00 PM                     13.7              0.600
-## 5 14MN081  6/30/2016 2:10:00 PM                     6.19            21.0  
-## 6 Acorn    5/12/2016 12:00:00 PM                    9.81            13.0</code></pre>
+## 1 14MN060  7/21/2016 11:30:00 AM                    7.1               23.9
+## 2 14MN060  8/3/2016 10:50:00 AM                     7.27              25.4
+## 3 14MN080  6/30/2016 1:50:00 PM                     8.48              19.1
+## 4 14MN081  3/2/2016 2:00:00 PM                     13.7                0.6
+## 5 14MN081  6/30/2016 2:10:00 PM                     6.19              21.0
+## 6 Acorn    5/12/2016 12:00:00 PM                    9.81              13.0</code></pre>
 <p>Things look good now, but the <code>DO</code> and <code>temp</code> column names have spaces in them. We can technically leave them this way, but they can create trouble for us later on. Let’s use <code>names()</code> to tidy them.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Assign the table names as a list</span>
 <span class="kw">names</span>(sw_wide) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;location&quot;</span>, <span class="st">&quot;sample_date&quot;</span>, <span class="st">&quot;DO_mg_per_L&quot;</span>, <span class="st">&quot;temp_C&quot;</span>)</code></pre></div>
@@ -1030,12 +1025,7 @@ top_directors &lt;-<span class="st"> </span><span class="kw">group_by</span>(win
 <li>Close RStudio and re-open your project.</li>
 </ul>
 <p><br></p>
-<p><em>You’ve reached the end of this path. Return to the top of the page and keep searching.</em></p>
-<script>
-  $(".btn_code").click(function() {
-    $(this.parentNode).toggleClass("open");
-  });
-</script>
+<p><em>You’ve reached the end of this path. Return to the top of the page and continue searching.</em></p>
 </div>
 </div>
 

@@ -323,7 +323,7 @@ You can chain these two functions together and do everything in one go. For that
 
 In a script the `%>%` is read as "and then". In the code below we are telling R to `mutate` the data __and then__ to `filter` it.
 
-<br><br>
+<br>
 
 ```{r neighbor2, eval=F}
 
@@ -336,8 +336,6 @@ nei_cat <- mutate(all_cats,
                   human_age > 80)
 
 ```
-<br>
-
 
 
 <div class = "quiz">
@@ -352,16 +350,14 @@ _What is the name of your friend's cat?_
 
 <br>
 
-<div class="toggle"><button class = "btn_code">_Show solution_</button>
-<br>
+<details>
+<summary class = "btn_code">_Show solution_</summary>
+<p>
 <i class="fa fa-check" aria-hidden="true" style="color: green;"></i> `Fluffy George`  
 
 _Breaking Meows! You rock!_
 
-</div></div>
-
-<br>
-
+</p></details></div>
 
 
 #| The case of the baby tigers &#x1F42F; &#x1F42F; 
@@ -786,8 +782,9 @@ filter(movies, title_year >= 2010) %>%
 Make a scatterplot of `imdb_score` and `gross_mil` with a fitted line showing the relationship. 
 
 
-<div class="toggle"><button class = "btn_code">_Show solution_</button>
-<br>
+<details>
+<summary class = "btn_code">_Show solution_</summary>
+<p>
 Stop cheating! Just kidding here's some code to help.
 ```{r}
 filter(movies, title_year >= 2010) %>% 
@@ -795,7 +792,8 @@ filter(movies, title_year >= 2010) %>%
     geom_point(alpha = 0.25) +
     geom_smooth(method = "lm")
 ```
-</div>
+</p></details>
+
 <br>
 
 
@@ -865,8 +863,10 @@ Decide which is the best way to present the bars: _stacked, side-by-side, or on 
 
 <br>
 
-<div class="toggle"><button class = "btn_code">_Show solution_</button>
-<br>
+<details>
+<summary class = "btn_code">_Show solution_</summary>
+<p>
+
 ```{r, eval = F}
 
 # Stacked
@@ -889,7 +889,7 @@ ggplot(movies, aes(title_year, fill = content_rating)) +
 
 
 ```
-</div>
+</p></details>
 <br>
 
 
@@ -901,12 +901,9 @@ ggplot(movies, aes(title_year, fill = content_rating)) +
 3. Paste the function `runif(1)` into your console. 
     - If the number you get is bigger than `0.2`, email your charts to the rest of the class.
 
-```{r, eval = F, echo = F}
-## Ignore the script below. It's for the buttons. #############################
-```
-<script>
-  $(".btn_code").click(function() {
-    $(this.parentNode).toggleClass("open");
-  });
-</script> 
 
+<br>
+
+# Return to [RCamp](index.html) {-}
+
+<br>
