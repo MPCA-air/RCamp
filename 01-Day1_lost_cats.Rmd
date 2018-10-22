@@ -22,9 +22,9 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ```
 
 
-### Good morning, Detective. {-}
+### Good morning, Detective {-}
 
-It's time to open RStudio.
+We've got a new case to crack. Let's open RStudio.
 
 <br>
 
@@ -61,12 +61,11 @@ Spelling is very important in R.
 
 <br>
 
-### LET'S GO! {-}
 
 #| New project
 <hr>
 
-Okay detective, let's open a new dossier for today's cat case. 
+Okay detective, let's open a new dossier for today's case. 
 
 <br>
 
