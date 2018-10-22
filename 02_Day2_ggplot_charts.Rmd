@@ -26,18 +26,9 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <br>
 
-__Please connect to your computer__
+__Please open your RStudio project from Day 1__
 
-1. __Open__ the Start menu  \ \*_Click the Window’s logo on the bottom left of the screen_
-1. Select ` Remote Desktop Connection `
-1. Enter ` w7-your7digit# `
-1. Press _Connect_
-
-<br>
-
-__And open your RStudio project__
-
-1. __Open__ your project folder from last week.
+1. __Open__ your project folder from Day 1.
 1. Double click the __.Rproj__ file to open RStudio.
 1. Relax.
 

@@ -1,3 +1,3 @@
-# R Camp
+# R Camp :cat: :arrow_left: :computer: :bar_chart:
 
-Find tutorials and workshops at https://MPCA-air.github.io/RCamp.
+R tutorials and workshops at https://MPCA-air.github.io/RCamp

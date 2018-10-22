@@ -22,23 +22,15 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ```
 
 
-### Good morning, Detective! {-}
+### Good morning, Detective. {-}
 
-<br>
-
-__Please connect to your computer__
-
-1. __Open__ the Start menu  \ \*_Click the Window’s logo on the bottom left of the screen_
-1. Select ` Remote Desktop Connection `
-1. Enter ` w7-your7digit# `
-1. Press _Connect_
-1. Relax...
+It's time to open RStudio.
 
 <br>
 
 <p style="display:block; text-align:center;"><img src="https://pbs.twimg.com/media/DNhps0gUQAAcS55.jpg" width="520"></p>
 
-<br><br><br>
+<br><br>
 
 
 # Welcome to R Camp! {-}
@@ -50,79 +42,11 @@ __Please connect to your computer__
 
 <br>
 
-We are __Kristie__, __Dorian__, and __Derek__.   
+We are __Kristie__, __Dorian__, and __Derek__ and we like __R__.
 
-We like __R__.
+We are cats and not computer scientists. 
 
-We are not computer scientists. 
-
-We make lots of mistakes. You will see us make mistakes. Feel free to laugh at us. It's okay. Really.
-
-
-<br><br>
-
-
-### Who are you? {-}
-
-<br>
-
-#### You are the great cohort of &nbsp; <span style="font-size: 1.8em;"><i class="fa fa-group" aria-hidden="true" style="color: steelblue;"></i></span> <span style="font-size: 2.7em;">2018</span><span style="font-size: 2em;"><i class="fa fa-group" aria-hidden="true" style="color: steelblue;"></i></span> {-}
-
-
-```{r, include=F, eval=F}
-library("yarrr")
-library("wordcloud")
-library("wordcloud2")
-library("dplyr")
-
-set.seed(2)
-
-names <- c("Derek", "Kristie", "Hassan", "Lisa", "Timothy", "Kellie", "Michaela", "Jacobe", "Jeffrey", "Megan", "Laura", "Erik", "Nicholas", "Ashley", "Dorian")
-
-names <- c("Derek", "Hassan", "Lisa", "Timothy", "Kellie", "Michaela", "Jacobe", "Jeffrey", "Megan", "Laura", "Erik", "Nicholas", "Ashley", "BlueBeard", "R","RCamp","2018")
-
-
-names <- c("Helen", "Dorian", "Derek","Jeffrey", "Megan", "Laura", "Anne", "Kristie", "Ashley", "Steve", "Bunny", "R","Maps","Eggs","2018")
-
-frequency <- c(c(1,1, 1, 1, 1, 1, 1, 1, 1, 1,1 ,1 ,1, 1)*8, 14,10,11)
-
-frequency <- c(as.numeric(sample(8:12, 11, replace = T)), 24,14,14,18)
-
-pirates <- piratepal("info2") 
-
-wordcloud(names, 
-          random.order = F, 
-          random.color = TRUE, 
-          scale        = c(4,1), 
-          freq         = frequency, 
-          colors       = pirates, 
-          vfont        = c("sans serif","bold"), 
-          rot.per      = 0.2,
-          size         = 0.1)
-
-wordcloud2(data.frame(word = names, freq = frequency), size = 1, color = 'random-dark')
-
-#letterCloud(data.frame(word = names, freq = frequency), word = "R", color = 'random-light', wordSize = 10)
-
-```
-
-![](images/name_cloud.png){width=75%}
-
-<br>
-
-You are the all in this together. Use each other as a resource. Share ideas, share code, collaborate. Make bad R jokes.   
-<br>
-
-__Here's one:__  _What'tis the pirate's favorite letter?_
-
-<br>
-
-![](http://photos1.blogger.com/x/blogger/1599/2546/1600/667273/R-is-for-Pirate.jpg){width="230"}
-
-<br>
-
-> _Just kidding. You'd think it'd be R, but 'tis the __C__ they truly love._
-
+We make lots of mistakes. You will see us make mistakes. Feel free to laugh at us. It's okay.
 
 <br>
 
@@ -135,28 +59,18 @@ Spelling is very important in R.
 
 ![](https://blog.wdtinc.com/hs-fs/hubfs/blog-files/lightning_spelling.jpg?t=1509031247746&width=600&name=lightning_spelling.jpg)
 
-_The Official Guide to spelling lightning._
-
 <br>
-
-> We don't know everything.    
-> Actually, we just learned how to spell lightening storm.   
-> Ahem, I mean __lightning__ storm. 
-
-<br>
-
-
 
 ### LET'S GO! {-}
 
 #| New project
 <hr>
 
-Okay detective, let's open a new dossier for today's mystery. 
+Okay detective, let's open a new dossier for today's cat case. 
 
 <br>
 
-__Step 1:__ Start a new project
+__Start a new project__
 
 - In _Rstudio_ select _File_ from the top menu bar
 - Choose _New Project..._
@@ -171,7 +85,7 @@ __Step 1:__ Start a new project
 
 R "scripts" are where you write your R code and document your work. They're like recipes or prescriptions you write the tell the computer what you want to happen to your data.
 
-__Step 2:__ Open a new R script
+__Open a new R script__
 
 - In the upper left, click on the white file icon with the green (+) sign. 
 - Select _R Script_.
@@ -226,7 +140,6 @@ Let's add a little style so we feel more at home. Follow these steps to change t
 
 
 
-
 #| First steps
 <hr>
 
@@ -243,18 +156,18 @@ cat
 
 # When saving text to a character object you need quotation marks.
 # This won't work.
-cat <- Derek
+cat <- Demitri
 
 
 # Without quotes, R looks for an object called Derek, and then let you know that it couldn't find one. 
 
 
 # You can copy an object by saving it to a new name.
-cat2 <- cat2
+cat2 <- cat
 
 
 # Overwrite an object
-cat <- "Derek II"
+cat <- "Demitri III"
   
 cat
 
@@ -264,8 +177,9 @@ cat2
 
 ```
 
-
 <br>
+
+
 
 If you create a name you don't like you can drop it with the function `rm() `.
 ```{r, eval = F}
@@ -276,7 +190,7 @@ rm(cat)
 rm(cat2)
 
 
-# Now, how do I get the 'cat' object back?
+# How can you get the original 'cat' object back?
 
 
 ```
