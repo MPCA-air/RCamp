@@ -41,13 +41,15 @@ __Install R__
 
 <br>
 
-<div class="toggle"><button class = "btn_code_blue">_Instructions for MPCA staff_</button>
-<br>
+<details>
+<summary class = "btn_code_blue">_Instructions for MPCA staff_</summary>
+<p>
 
 1. Open the ` G:\Lapps\R ` folder.
 1. Double click the ` R-3.4.2-win.exe ` file.
 1. In the pop-up window, click the Ok and Next buttons until you reach the end.
-</div>
+
+</p></details>
 
   
   
@@ -66,27 +68,23 @@ __Install RStudio__
 
 <br>
 
-<div class="toggle"><button class = "btn_code_blue">_Instructions for MPCA staff_</button>
-<br>
+<details>
+<summary class = "btn_code_blue">_Instructions for MPCA staff_</summary>
+<p>
+
 
 1. Open the Start menu. \ \*_Click the Window's logo on the bottom left of the screen._
 1. Search for _Software Center_
-1. Select ` R Studio-1.1.383 - Install `
+1. Select ` R Studio-1.**** - Install `
 1. Click the blue _INSTALL_ button down in the lower right.
 1. A secret window will open behind the _Software Center_. Find it by minimizing the _Software Center_.
 1. In the installation window, click _Next_.
 1. Install RStudio to the default folder `C:\Program Files `
-</div>
+
+</p></details>
 
 
 # Do a happy dance!
 
 ![](http://www.gifbin.com/bin/012012/1331836791_kittens_on_turntables.gif)
-
-
-<script>
-  $(".btn_code").click(function() {
-    $(this.parentNode).toggleClass("open");
-  });
-</script> 
 
