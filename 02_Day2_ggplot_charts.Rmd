@@ -148,6 +148,28 @@ cricket_cats <- filter(all_cats, country %in% c("UK", "Australia"))
 <br>
 
 
+
+__NOTE:__ It's good practice to load the packages you'll need at the top of your script since you'll need to run these lines __every__ time you open R or switch projects. If you forget, you're likely to see this error message.
+
+```{r, echo = F}
+
+detach("package:readr", unload = TRUE)
+
+```
+
+```{r}
+
+read_csv(my_cat_file)
+
+```
+
+<br>
+
+![](images/errors.png){width="380"}
+
+
+
+
 # _Guess the Cat_ {-}
 
 ![](https://i.upworthy.com/nugget/530baf6f46d669b92a00001f/guess-who-game-9e782ebefa57a5fea47e29386f99b356.jpg){width="250" align="right" style="margin-top: -20px; margin-left: 20px; margin-right: 36px;"}

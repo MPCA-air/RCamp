@@ -25,7 +25,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 # Install `R`
 
-Let’s install the newest version of __R__. This data software is contributed to and maintained by people all around the world. It lets you perform data analysis like you're writing a recipe for chocolate chip cookies. Once you've written your favorite recipe you can use it over and over again and share it with your collaborators. 
+The R computer language is contributed to and maintained by people all around the world. It helps you perform a data analysis just like you're following a recipe for chocolate chip cookies. And once you find your favorite recipe you can use it over and over again and easily share it with your collaborators. Let’s install the newest version of __R__. 
 
 
 __Install R__  
