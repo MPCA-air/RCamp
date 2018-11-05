@@ -28,10 +28,10 @@ knitr::opts_chunk$set(echo = TRUE, error = TRUE)
 
 ![](images/r_logo.png){width="170" style="float: left; margin-top: -6px; margin-right: 30px;"}
 
+<br>
+The R language is built and contributed to by people all around the world. It lets you perform data analysis just like you're following a recipe for cookies. Once you find your favorite recipe you can use it over and over again and easily share it with your collaborators.
 
-The R language is built and contributed to by people all around the world. It lets you perform data analysis just like you're following a recipe for cookies. Once you find your favorite recipe you can use it over and over again and easily share it with your collaborators. Let’s install the newest version of R. 
-
-<br><br>
+<br><br><br>
 
 ### Instructions for MPCA 
 
@@ -59,15 +59,15 @@ The R language is built and contributed to by people all around the world. It le
 
 ![](images/rstudio-hex.png){style="float: right; margin-top: -12px;"}
 
-Now let's install the newest version of __RStudio__. This is the handy user interface we use to write R scripts and keep our projects organized. It isn't required to use R, but it makes things easier.
+__RStudio__ is the handy user interface we use to write R scripts and keep our projects organized. It isn't required to use R, but it makes things a whole lot easier.
 
 <br>
 
 __Install RStudio__  
 
-1. Open your web browser and navigate to [www.rstudio.com](https://www.rstudio.com/products/rstudio/download/#download).
-1. Choose your operating system and download the newest version.
-1. Open the file and install with the default options.
-1. You are officially ready.
+1. Open your web browser and navigate to [www.rstudio.com](https://www.rstudio.com/products/rstudio/download/#download)
+1. Choose your operating system and download the newest version
+1. Open the file and install with the default options
+1. You are officially ready to __R__
 
 <br>
