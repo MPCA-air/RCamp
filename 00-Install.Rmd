@@ -7,6 +7,7 @@ output:
     toc_float: true
     theme: readable
     highlight: tango
+    self_contained: false
     css: css/camp_style.css
 fontsize: 14pt
 monofont: Source Code Pro
@@ -19,30 +20,18 @@ monofontoptions: Scale = 1.1
 ```{r setup, include=FALSE}
 library(rmarkdown)
 knitr::opts_chunk$set(echo = TRUE, error = TRUE)
-htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ```
 
 
-# Install `R`
+## Install `R`
+<hr>
 
 The R computer language is contributed to and maintained by people all around the world. It helps you perform a data analysis just like you're following a recipe for chocolate chip cookies. And once you find your favorite recipe you can use it over and over again and easily share it with your collaborators. Let’s install the newest version of __R__. 
-
-
-__Install R__  
-
-1. Open your web browser and navigate to R's download page -> [CRAN](https://cran.r-project.org).
-1. Choose your operating system from the top. Or use the shortcuts below.
-    - __WINDOWS__ go here: [Windows](https://cran.r-project.org/bin/windows/base/)
-    - __MAC__ go here: [Mac](https://cran.r-project.org/bin/macosx/)
-        - Scroll down and download the highest numbered file (ex. __R-3.5.0.pkg__)
-    - __LINUX__ go here: [Linux](https://cran.r-project.org/bin/linux/)
-1. Open the file and install with the default options.
-
 
 <br>
 
 <details>
-<summary class = "btn_code_blue">_Instructions for MPCA staff_</summary>
+<summary class = "btn_code_blue"> Instructions for MPCA </summary>
 <p>
 
 1. Open the ` G:\Lapps\R ` folder.
@@ -51,40 +40,36 @@ __Install R__
 
 </p></details>
 
+<br>
+
+__Instructions for everyone__  
+
+1. Open your web browser and navigate to R's download page -> [CRAN](https://cran.r-project.org).
+1. Choose your operating system from the top. Or use the shortcuts below.
+    - __WINDOWS__ go here: [Windows](https://cran.r-project.org/bin/windows/base/)
+    - __MAC__ go here: [Mac](https://cran.r-project.org/bin/macosx/)
+        - Scroll down and download the highest numbered file (ex. _R-3.5.1.pkg_)
+    - __LINUX__ go here: [Linux](https://cran.r-project.org/bin/linux/)
+1. Save the file and install with the default options.
+
+
   
-  
-# Install `RStudio` 
+## Install `RStudio` 
+<hr>
 
 Now let's install the newest version of __RStudio__. This is the handy user interface we use to write R scripts and keep our projects organized. It isn't required to use R, but it makes things easier.
 
 
 __Install RStudio__  
 
-
 1. Open your web browser and navigate to [www.rstudio.com](https://www.rstudio.com/products/rstudio/download/#download).
 1. Choose your operating system and download the newest version.
 1. Open the file and install with the default options.
 1. You are officially ready.
 
-<br>
-
-<details>
-<summary class = "btn_code_blue">_Instructions for MPCA staff_</summary>
-<p>
 
 
-1. Open the Start menu. \ \*_Click the Window's logo on the bottom left of the screen._
-1. Search for _Software Center_
-1. Select ` R Studio-1.**** - Install `
-1. Click the blue _INSTALL_ button down in the lower right.
-1. A secret window will open behind the _Software Center_. Find it by minimizing the _Software Center_.
-1. In the installation window, click _Next_.
-1. Install RStudio to the default folder `C:\Program Files `
-
-</p></details>
-
-
-# Do a happy dance!
+## Do a happy dance!
 
 ![](http://www.gifbin.com/bin/012012/1331836791_kittens_on_turntables.gif)
 
