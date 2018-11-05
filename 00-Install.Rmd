@@ -37,7 +37,8 @@ The R language is built and contributed to by people all around the world. It le
 
 1. Open the ` G:\Lapps\R ` folder.
 1. Double click the ` R-3.4.2-win.exe ` file.
-1. In the pop-up window, click the Ok and Next buttons until you reach the end.
+1. In the pop-up windows click the `Ok` and `Next` buttons until you reach the end.
+1. Delete the 2 shortcuts from your _Desktop_, you won't need them.
 
 <br>
 
