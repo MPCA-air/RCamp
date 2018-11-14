@@ -158,7 +158,7 @@ The EPSG code for __UTM zone 15N__ is ` 26915 `.
 
 (See https://epsg.io/26915)
 
-<i class="fa fa-warning" aria-hidden="true"></i> _Warning:_ When you save UTM coordinates in Excel or R, it's best to switch the columns to text. It will save you you from finding all of your coordinates being rounded by an overly helpful computer.
+<i class="fa fa-warning" aria-hidden="true"></i> _Warning:_ When you save UTM coordinates in Excel or R, it's best to switch the columns to text. It will save you from finding all of your coordinates being rounded by an overly helpful computer.
 
 
 ## Create a new map in _UTM_ coordinates
@@ -386,9 +386,9 @@ select(pops, -GEOID) %>% head()
 ```
 
 
-<br><br><br><br>
+<br><br>
 
-_You've reached the end of the dusty path. You look around and all you see is an old worn scrap of leather. Maybe it used to be a shoe? You can pick it up and take it with you if you like. The choice is all yours really._ 
+_You've reached the end of the dusty path. You look around and all you see is an old worn scrap of leather. Maybe it used to be a shoe? You can pick it up and take it with you if you like. The choice is yours._ 
 
-_Either way, return to the top of the page and continue your adventure._
+_Return to the top of the page and continue your adventure._
 

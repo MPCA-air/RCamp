@@ -547,7 +547,7 @@ Table of __aesthetics__.
 
 Table of __geoms__.
 
-![](http://r4ds.had.co.nz/images/visualization-geoms-2.png)
+![](images/geoms_1var.png)
 
 ![](images/geoms_diagram.png)
 
@@ -555,12 +555,9 @@ Table of __geoms__.
 
 Table of __themes__.
 
-You can quickly customize the look of your plot by adding a `theme()` function.
+You can customize the look of your plot by adding a `theme()` function.
 
-![](http://r4ds.had.co.nz/images/visualization-themes.png)
-
-<br>
-
+![](images/ggplot_themes.png)
 
 
 # Plotting finale!

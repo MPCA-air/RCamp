@@ -17,9 +17,7 @@ monofontoptions: Scale = 1.1
 
 ```{r setup, include = F}
 knitr::opts_chunk$set(echo = T, error = T, message = F, warning = F)
-
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
-
 dt_options <- list(scrollX = T, autoWidth = T, searching = F, ordering = F, lengthChange = F, paginate = F, info = F)
 ```
 
