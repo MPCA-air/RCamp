@@ -11,7 +11,7 @@
 
 
 
-<title>R Camp | day 3</title>
+<title>Web data</title>
 
 <script src="03-Day3_web_data_files/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -248,32 +248,16 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">R Camp | day 3</h1>
+<h1 class="title toc-ignore">Web data</h1>
 
 </div>
 
 
 <style> code {color: #535353 !important;} </style>
-<div id="data-paths" class="section level1">
-<h1>Data paths</h1>
-<p><img src="https://images-na.ssl-images-amazon.com/images/I/51YvRyFAQsL._SX284_BO1,204,203,200_.jpg" width="260" align="right" style = "margin-top: -150px; margin-right: 20px"></p>
-<ol style="list-style-type: decimal">
-<li><a href="03-Day3_db_connect.html">Database connections</a></li>
-<li><a href="03-Day3_GIS.html">GIS &amp; Shapefiles</a></li>
-<li><strong>Web data</strong></li>
-<li><a href="03-Day3_tableau.html">Tableau</a></li>
-<li><a href="03-Day3_other_stats.html">Other Stats software: SAS, SPSS, MATLAB</a></li>
-</ol>
-<p><br><br><br></p>
-</div>
-<div id="web-data" class="section level1">
-<h1>Web data</h1>
+<p><img src="images/web_data.png" width="300" style="margin-top: -25px; margin-right: 0;  margin-left: 30px; float:right;"></p>
 <p>This path includes examples of downloading online data from FTP sites and other data stores.</p>
-</div>
-<div id="air-data" class="section level1">
-<h1>Air data</h1>
-<div id="epas-airnow" class="section level2">
-<h2>EPA’s <em>AirNow</em></h2>
+<div id="epas-airnow" class="section level1">
+<h1>EPA’s <em>AirNow</em></h1>
 <p>Air data for the <em>entire</em> United States is at your finger tips. <em>AirNow</em> maintains a publicly accessible folder of current air monitoring data at <a href="https://files.airnowtech.org/">Today’s air quality</a>.</p>
 <p>Use the following code to grab the most recent AQI results for the United States.</p>
 <div id="get-air-monitoring-data" class="section level3">
@@ -301,18 +285,18 @@ aqi_now &lt;-<span class="st"> </span><span class="kw">filter</span>(aqi_now, pa
 <span class="co"># Show table of top concentration results</span>
 aqi_now <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(<span class="kw">desc</span>(concentration)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="op">-</span>time, <span class="op">-</span>aqsid, <span class="op">-</span>units) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">head</span>(<span class="dv">10</span>)</code></pre></div>
 <pre><code>## # A tibble: 10 x 6
-##    date   city        local_time parameter concentration agency           
-##    &lt;chr&gt;  &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;             &lt;dbl&gt; &lt;chr&gt;            
-##  1 11/14~ Dhaka                6 PM2.5               321 U.S. Department ~
-##  2 11/14~ Yuba City           -8 PM2.5               290 California Air R~
-##  3 11/14~ Beijing              8 PM2.5               278 U.S. Department ~
-##  4 11/14~ Gridley             -8 PM2.5               160 California Air R~
-##  5 11/14~ Lincoln             -8 PM2.5               160 Placer County AP~
-##  6 11/14~ Arden Arca~         -8 PM2.5               146 Sacramento Metro~
-##  7 11/14~ &quot;Downtown ~         -8 PM2.5               136 California Air R~
-##  8 11/14~ Sloughhouse         -8 PM2.5               119 Sacramento Metro~
-##  9 11/14~ Woodland            -8 PM2.5               102 Yolo-Solano AQMD 
-## 10 11/14~ Elk Grove           -8 PM2.5                94 Sacramento Metro~</code></pre>
+##    date   city       local_time parameter concentration agency            
+##    &lt;chr&gt;  &lt;chr&gt;           &lt;int&gt; &lt;chr&gt;             &lt;dbl&gt; &lt;chr&gt;             
+##  1 11/14~ Chico -  ~         -8 PM2.5             184   California Air Re~
+##  2 11/14~ Beijing             8 PM2.5             179   U.S. Department o~
+##  3 11/14~ Arden Arc~         -8 PM2.5             176   Sacramento Metro.~
+##  4 11/14~ Elk Grove          -8 PM2.5             115   Sacramento Metro.~
+##  5 11/14~ Yuba City          -8 PM2.5             114   California Air Re~
+##  6 11/14~ &quot;Downtown~         -8 PM2.5             109   California Air Re~
+##  7 11/14~ Ulaanbaat~          8 PM2.5              99   U.S. Department o~
+##  8 11/14~ Modesto -~         -8 PM2.5              96   California Air Re~
+##  9 11/14~ San Rafael         -8 PM2.5              85   San Francisco Bay~
+## 10 11/14~ Sequoia a~         -8 PM2.5              82.3 National Park Ser~</code></pre>
 </div>
 <div id="get-monitoring-locations" class="section level3">
 <h3>Get monitoring locations</h3>
@@ -384,9 +368,8 @@ aqi_mn &lt;-<span class="st"> </span><span class="kw">filter</span>(aqi_now, sta
 <p><img src="03-Day3_web_data_files/figure-html/unnamed-chunk-4-1.png" width="768" /></p>
 </div>
 </div>
-</div>
-<div id="weather" class="section level1">
-<h1>Weather</h1>
+<div id="weather-alerts" class="section level1">
+<h1>Weather alerts</h1>
 <p>The script below will make a map of the current weather alerts in the Midwest. <em>Hint: You will need to install new packages.</em></p>
 <p>Install the latest version of <em>weatherAlerts</em> with:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)<span class="st">`</span><span class="dt">  </span>

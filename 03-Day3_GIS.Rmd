@@ -1,5 +1,5 @@
 ---
-title: "R Camp | day 3"
+title: "GIS and Shapefiles"
 output: 
  html_document:
     toc: true
@@ -9,47 +9,31 @@ output:
     highlight: tango
     css: css/camp_style.css
     self_contained: false
-fontsize: 14pt
-monofont: Source Code Pro
-monofontoptions: Scale = 1.1
+    fontsize: 14pt
+    monofont: Source Code Pro
+    monofontoptions: Scale = 1.1
 ---
 
 <style> code {color: #535353 !important;} </style>
 
 ```{r setup, include = F}
 knitr::opts_chunk$set(echo = T, error = T, message = F, warning = F)
-
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
-
 dt_options <- list(scrollX = T, autoWidth = T, searching = F, ordering = F, lengthChange = F, paginate = F, info = F)
 ```
 
 
+<img src="images/map_Hennepin.PNG" width="340" style="margin-top: -25px; margin-right: 0; margin-left: 30px; float: right;">
 
-# Data paths
+<br>
 
-<img src="https://images-na.ssl-images-amazon.com/images/I/61jeIyJOAJL.jpg" width="240" align="right" style = "margin-top: -150px; margin-right: 20px">
-
-1. [Database connections](03-Day3_db_connect.html)
-1. __GIS & Shapefiles__
-1. [Web data](03-Day3_web_data.html)
-1. [Tableau](03-Day3_tableau.html)
-1. [Other Stats software: SAS, SPSS, MATLAB](03-Day3_other_stats.html)
-
-<br><br><br>
-
-
-
-# GIS and Shapefiles
+# The `sf` package
 
 The `sf` _(simple features)_ package can read and save shapefiles, and it plays nicely with the _dpylr_ functions you've been learning. Let's install it.
 
 ```{r, eval=F}
 install.packages("sf")
 ```
-
-_Ref: [UseR2017 | reading and writing spatial data](https://edzer.github.io/UseR2017/#reading-and-writing-spatial-data)_
-
 
 <br>
 
@@ -340,7 +324,7 @@ Let's install the _tigris_ package.
 `install.packages(tigris)`
 
 ### Minnesota tracts
-```{r}
+```{r, results='hide', message=F, warning=F}
 library(tigris)
 
 # Load geography
@@ -350,9 +334,10 @@ mn_tracts <- tracts(state = "MN", cb = TRUE)
 plot(mn_tracts)
 ```
 
+
 ### Midwest Counties
 
-```{r}
+```{r, results='hide', message=F, warning=F}
 # Load geography
 midw_counties <- counties(state = c("MN","SD","ND", "WI"), cb = TRUE)
 
@@ -386,9 +371,14 @@ select(pops, -GEOID) %>% head()
 ```
 
 
-<br><br>
+<br>
+
+_Reference:_ [UseR2017 | reading and writing spatial data](https://edzer.github.io/UseR2017/#reading-and-writing-spatial-data)
+
+<br>
 
 _You've reached the end of the dusty path. You look around and all you see is an old worn scrap of leather. Maybe it used to be a shoe? You can pick it up and take it with you if you like. The choice is yours._ 
 
-_Return to the top of the page and continue your adventure._
+Return to the homepage and continue your adventure.
+
 

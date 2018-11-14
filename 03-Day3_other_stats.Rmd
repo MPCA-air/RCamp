@@ -1,5 +1,5 @@
 ---
-title: "R Camp | day 3"
+title: "Other stats software"
 output: 
  html_document:
     toc: true
@@ -8,7 +8,7 @@ output:
     theme: readable
     highlight: tango
     css: "css/camp_style.css"
-fontsize: 14pt
+    fontsize: 17pt
 monofont: Source Code Pro
 monofontoptions: Scale = 1.1
 ---
@@ -24,32 +24,16 @@ dt_options <- list(scrollX = T, autoWidth = T, searching = F, ordering = F, leng
 ```
 
 
-# Data paths
+When working with other researchers you may come across data stored in a proprietary format such as an SPSS file. Don't worry! R can read and write these files too.
 
-<img src="http://s3.crackedcdn.com/phpimages/article/8/6/2/382862_v1.jpg" width="240" align="right" style = "margin-top: -140px; margin-right: 20px">
+![](https://github.com/tidyverse/haven/raw/master/man/figures/logo.png){width="150" style="margin-left: 32px; margin-top: -5px; float: right;"}
 
-1. [Database connections](03-Day3_db_connect.html)
-1. [GIS & Shapefiles](03-Day3_GIS.html)
-1. [Web data](03-Day3_web_data.html)
-1. [Tableau](03-Day3_tableau.html)
-1. __Other Stats software: SAS, SPSS, MATLAB__
+# SAS, SPSS, Stata
 
-<br><br><br>
+To read and write _SAS_, _SPSS_, or _Stata_ files you can use the `haven` package, which is another member of the _tidyverse_. While it is possible to save data from R in other proprietary formats, we recommend using the _CSV_ format, as it will be readable by most statistical software and will prevent any future worries about software versions preventing you from opening your data.
 
+There are example data files from other stats software in the [sample data](file://X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/Student Folder/Sample data/Other stats) folder at `X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/Student Folder/Sample data/Other stats`. You can copy a few of the files to your R project to test the functions for yourself.
 
-# Other stats software
-
-When working with other researchers you may come across data stored in a proprietary format such as an SPSS file. Don't worry! R can read and write these files too. No one even has to know we can't afford to use SAS.
-
-There are example data files from other stats software in the folder `X:/Agency_Files/Outcomes/Risk_Eval_Air_Mod/_Air_Risk_Evaluation/R/R_Camp/Student Folder/Sample data`. You can copy some of the files to your R project folder to make it easier to test some of the functions for yourself.
-
-## SAS, SPSS, Stata
-
-![](https://github.com/tidyverse/haven/raw/master/man/figures/logo.png){width="140" align="right" style="margin-left: 25px;"}
-
-<br>
-
-To read and write _SAS_, _SPSS_, or _Stata_ files you can use the `haven` package, which is another member of the _tidyverse_. While it is possible to save data from R in other proprietary formats, we recommend using the _.CSV_ format, as it will be readable by most statistical software and will prevent any future worries about software versions preventing you from opening your data.
 
 ## Examples
 
@@ -110,4 +94,8 @@ readMat("matlab-data.mat2")
 
 ```
 
+
+##
+
+_You've reached the end of this path. Return to the homepage and continue searching._
 

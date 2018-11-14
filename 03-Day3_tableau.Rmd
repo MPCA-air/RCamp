@@ -1,5 +1,5 @@
 ---
-title: "R Camp | day 3"
+title: "Tableau reading"
 output: 
  html_document:
     toc: true
@@ -22,25 +22,22 @@ dt_options <- list(scrollX = T, autoWidth = T, searching = F, ordering = F, leng
 ```
 
 
-# Data paths
+<img src="images/tableau_board.png" width="290" style="margin-top: -25px; margin-right: 0; margin-left: 34px; float: right;">
 
-<img src="http://www.gamebooks.org/gallery/cyoa025.jpg" width="270" align="right" style = "margin-top: -150px; margin-right: 20px">
+<br>
 
-1. [Database connections](03-Day3_db_connect.html)
-1. [GIS & Shapefiles](03-Day3_GIS.html)
-1. [Web data](03-Day3_web_data.html)
-1. __Tableau__
-1. [Other Stats software: SAS, SPSS, MATLAB](03-Day3_other_stats.html)
+I'll let you in on my best known secret. You can grab data directly from published Tableau workbooks without even opening them. This is handy when you don't have access to an underlying database or when you're dealing with a database that requires complicated table joins to extract the data you need. 
 
-<br><br><br>
+<br>
+
+__Here's the trick:__
+
+> To download data from a Tableau workbook add ".csv" to the end of a worksheet's _URL_. 
+>
+> Let's try it!
 
 
-# Tableau
-I'll let you in on my best known secret. You can grab data directly from published Tableau workbooks without ever having to open them. This is handy when you don't have access to an underlying database or if you're dealing with a database that requires complicated table joins to extract the data you need. 
-
-Here's the trick:
-
->  To download data from a Tableau workbook, add ".csv" to the end of a worksheet's _URL_. That's it!
+# Bad Volkswagen data
 
 Let's the grab the data behind the internal [Volkswagen vehicle](http://tableau.pca.state.mn.us/#/views/VWVolkswagendieselregistrationsinMN/VWownership) workbook.
 
@@ -78,11 +75,11 @@ head(vw_cars)
 
 <br>
 
-Do you feel powerful? Good. But there is one small caveat.
+Isn't that great? But there is one small caveat.
 
 - This trick doesn't work on the URL of a Tableau _Story_. You'll need to get to the worksheet or dashboard behind the story.
  
-For an example, take a look at the [Watershed Pollutant Load Monitoring](http://tableau.pca.state.mn.us/#/views/wplmn_data_browser/WPLMNBrowser) workbook. Since the workbook loads to a _Story_ the nifty `.csv` trick won't work on this page. We need to jump over to a worksheet or dashboard behind the story. 
+As an example, take a look at the [Watershed Pollutant Load Monitoring](http://tableau.pca.state.mn.us/#/views/wplmn_data_browser/WPLMNBrowser) workbook. Since the workbook loads to a _Story_ the nifty `.csv` trick won't work on this page. We need to jump over to a worksheet or dashboard behind the story. 
 
 In this case the tabs are shown at the top, but this won't always be true. Let's try the tab _"Download Annual data"_.
 
@@ -307,6 +304,5 @@ https://public.tableau.com/profile/mpca.data.services#!/vizhome/Pointsourceairem
 <br><br><br>
 
 
-
-__Congratulations!! You found a shiny treasure. _But_ you're greedy. Return to the top of the page and keep hunting.__
+__Congratulations! You found a shiny treasure. _But_ you're greedy. Return to the top of the page and keep hunting.__
 

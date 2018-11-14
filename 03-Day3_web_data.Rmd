@@ -1,5 +1,5 @@
 ---
-title: "R Camp | day 3"
+title: "Web data"
 output: 
  html_document:
     toc: true
@@ -9,42 +9,25 @@ output:
     highlight: tango
     css: css/camp_style.css
     self_contained: false
-fontsize: 14pt
-monofont: Source Code Pro
-monofontoptions: Scale = 1.1
+    fontsize: 16pt
+    monofont: Source Code Pro
+    monofontoptions: Scale = 1.1
 ---
 
 <style> code {color: #535353 !important;} </style>
 
 ```{r setup, include = F}
 knitr::opts_chunk$set(echo = T, error = T, message = F, warning = F)
-
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
-
 dt_options <- list(scrollX = T, autoWidth = T, searching = F, ordering = F, lengthChange = F, paginate = F, info = F)
 ```
 
-
-# Data paths
-
-<img src="https://images-na.ssl-images-amazon.com/images/I/51YvRyFAQsL._SX284_BO1,204,203,200_.jpg" width="260" align="right" style = "margin-top: -150px; margin-right: 20px">
-
-1. [Database connections](03-Day3_db_connect.html)
-1. [GIS & Shapefiles](03-Day3_GIS.html)
-1. __Web data__
-1. [Tableau](03-Day3_tableau.html)
-1. [Other Stats software: SAS, SPSS, MATLAB](03-Day3_other_stats.html)
-
-<br><br><br>
-
-
-# Web data
+<img src="images/web_data.png" width="300" style="margin-top: -25px; margin-right: 0;  margin-left: 30px; float:right;">
 
 This path includes examples of downloading online data from FTP sites and other data stores.
 
-# Air data
 
-## EPA's _AirNow_
+# EPA's _AirNow_
 
 Air data for the _entire_ United States is at your finger tips. _AirNow_ maintains a publicly accessible folder of current air monitoring data at [Today's air quality](https://files.airnowtech.org/).
 
@@ -159,7 +142,7 @@ filter(aqi_mn, parameter == "PM2.5") %>%
 
 
 
-# Weather 
+# Weather alerts
 
 The script below will make a map of the current weather alerts in the Midwest. _Hint: You will need to install new packages._
 

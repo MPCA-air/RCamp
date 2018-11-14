@@ -11,7 +11,7 @@
 
 
 
-<title>R Camp | day 3</title>
+<title>Databases</title>
 
 <script src="03-Day3_db_connect_files/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -248,33 +248,20 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">R Camp | day 3</h1>
+<h1 class="title toc-ignore">Databases</h1>
 
 </div>
 
 
 <style> code {color: #535353 !important;} </style>
-<div id="data-paths" class="section level1">
-<h1>Data paths</h1>
-<p><img src="https://www.themarysue.com/wp-content/uploads/2014/11/cyoa002hb.jpg" width="280" align="right" style="margin-top: -145px; margin-right: 20px"></p>
-<ol style="list-style-type: decimal">
-<li><strong>Database connections</strong></li>
-<li><a href="03-Day3_GIS.html">GIS &amp; Shapefiles</a></li>
-<li><a href="03-Day3_web_data.html">Web data</a></li>
-<li><a href="03-Day3_tableau.html">Tableau</a></li>
-<li><a href="03-Day3_other_stats.html">Other Stats software: SAS, SPSS, MATLAB</a></li>
-</ol>
-<p><br></p>
-</div>
-<div id="database-connections" class="section level1">
-<h1>Database connections</h1>
-<div id="sick-dogs" class="section level2">
-<h2>Sick dogs</h2>
+<p>This path is all about connecting to Oracle databases like <code>TEMPO</code> and <code>Delta</code>.</p>
+<div id="sick-dogs" class="section level1">
+<h1>Sick dogs</h1>
 <p>A string of dog deaths has left public health officials scratching their heads. Are cats finally getting their revenge or is there some other funny business at play?</p>
 <p>After a few days of chasing down dead-ends, you find a fax waiting for you in your office. The letterhead shows the logo for the Wisconsin DNR. That’s odd. The last time you heard from them was during the great chameleon outbreak of 1992.</p>
 <p>The letter contains the following warning:</p>
 <div class="figure">
-<img src="https://dogtrekker.com/userfiles//GreenDogCCJillSiegrist.gif" align="right" style="margin-left: 22px;" width="220" />
+<img src="images/sick_dog.gif" align="right" style="margin-left: 22px;" width="220" />
 
 </div>
 <blockquote>
@@ -284,7 +271,6 @@ div.tocify {
 </blockquote>
 <p><br><br></p>
 <p><strong>Which water bodies in MN would be hospitable to this bacteria?</strong></p>
-</div>
 <div id="tempo-delta-oracle-databases" class="section level2">
 <h2>TEMPO &amp; Delta: <em>Oracle databases</em></h2>
 <p><br></p>
@@ -741,14 +727,14 @@ sw_wide &lt;-<span class="st"> </span><span class="kw">spread</span>(sw, CHEMICA
 
 <span class="kw">head</span>(sw_wide)</code></pre></div>
 <pre><code>## # A tibble: 6 x 4
-##   LOC_NAME SAMPLE_DATE           `Dissolved oxygen (DO)` `Temperature, wa~
-##   &lt;chr&gt;    &lt;chr&gt;                                   &lt;dbl&gt;             &lt;dbl&gt;
-## 1 14MN060  7/21/2016 11:30:00 AM                    7.1               23.9
-## 2 14MN060  8/3/2016 10:50:00 AM                     7.27              25.4
-## 3 14MN080  6/30/2016 1:50:00 PM                     8.48              19.1
-## 4 14MN081  3/2/2016 2:00:00 PM                     13.7                0.6
-## 5 14MN081  6/30/2016 2:10:00 PM                     6.19              21.0
-## 6 Acorn    5/12/2016 12:00:00 PM                    9.81              13.0</code></pre>
+##   LOC_NAME SAMPLE_DATE          `Dissolved oxygen (DO~ `Temperature, wate~
+##   &lt;chr&gt;    &lt;chr&gt;                                 &lt;dbl&gt;               &lt;dbl&gt;
+## 1 14MN060  7/21/2016 11:30:00 ~                   7.1                 23.9
+## 2 14MN060  8/3/2016 10:50:00 AM                   7.27                25.4
+## 3 14MN080  6/30/2016 1:50:00 PM                   8.48                19.1
+## 4 14MN081  3/2/2016 2:00:00 PM                   13.7                  0.6
+## 5 14MN081  6/30/2016 2:10:00 PM                   6.19                21.0
+## 6 Acorn    5/12/2016 12:00:00 ~                   9.81                13.0</code></pre>
 <p>Things look good now, but the <code>DO</code> and <code>temp</code> column names have spaces in them. We can technically leave them this way, but they can create trouble for us later on. Let’s use <code>names()</code> to tidy them.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Assign the table names as a list</span>
 <span class="kw">names</span>(sw_wide) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;location&quot;</span>, <span class="st">&quot;sample_date&quot;</span>, <span class="st">&quot;DO_mg_per_L&quot;</span>, <span class="st">&quot;temp_C&quot;</span>)</code></pre></div>
@@ -1025,7 +1011,7 @@ top_directors &lt;-<span class="st"> </span><span class="kw">group_by</span>(win
 <li>Close RStudio and re-open your project.</li>
 </ul>
 <p><br></p>
-<p><em>You’ve reached the end of this path. Return to the top of the page and continue searching.</em></p>
+<p><em>You’ve reached the end of this path. Return to the homepage and continue searching.</em></p>
 </div>
 </div>
 

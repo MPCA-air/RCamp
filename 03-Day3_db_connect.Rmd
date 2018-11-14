@@ -1,5 +1,5 @@
 ---
-title: "R Camp | day 3"
+title: "Databases"
 output: 
  html_document:
     toc: true
@@ -9,9 +9,9 @@ output:
     highlight: tango
     css: css/camp_style.css
     self_contained: false
-fontsize: 14pt
-monofont: Source Code Pro
-monofontoptions: Scale = 1.1
+    fontsize: 15pt
+    monofont: Source Code Pro
+    monofontoptions: Scale = 1.1
 ---
 
 <style> code {color: #535353 !important;} </style>
@@ -25,23 +25,10 @@ dt_options <- list(scrollX = T, autoWidth = T, searching = F, ordering = F, leng
 ```
 
 
-# Data paths
-
-<img src="https://www.themarysue.com/wp-content/uploads/2014/11/cyoa002hb.jpg" width="280" align="right" style="margin-top: -145px; margin-right: 20px"> 
-
-1. __Database connections__
-1. [GIS & Shapefiles](03-Day3_GIS.html)
-1. [Web data](03-Day3_web_data.html)
-1. [Tableau](03-Day3_tableau.html)
-1. [Other Stats software: SAS, SPSS, MATLAB](03-Day3_other_stats.html)
-
-<br>
+This path is all about connecting to Oracle databases like `TEMPO` and `Delta`.
 
 
-# Database connections
-
-
-## Sick dogs
+# Sick dogs
 
 A string of dog deaths has left public health officials scratching their heads. Are cats finally getting their revenge or is there some other funny business at play?
 
@@ -49,7 +36,7 @@ After a few days of chasing down dead-ends, you find a fax waiting for you in yo
 
 The letter contains the following warning: 
 
-![](https://dogtrekker.com/userfiles//GreenDogCCJillSiegrist.gif){align="right" style="margin-left: 22px;" width="220"}
+![](images/sick_dog.gif){align="right" style="margin-left: 22px;" width="220"}
 
 > Prepare yourselves!
 >
@@ -669,5 +656,5 @@ ggplot(top_directors[1:10, ], aes(director_name, award_count)) + geom_col() + sc
 <br>
 
 
-_You've reached the end of this path. Return to the top of the page and continue searching._
+_You've reached the end of this path. Return to the homepage and continue searching._
 
