@@ -77,7 +77,7 @@ write_dta(mtcars, "mtcars.dta")
 
 # Minitab, Systat, Matlab
 
-The`foreign` package reads and writes _MiniTab_ and _SYSTAT (SigmaPlot)_ files. When reading these file types you may end up with a _list_ of multiple data items. To access one of the list items use brackets such as `data[1]`, or add the name of the item in the list after a _$_ sign, as in `data$Control`. In some cases it may be easier to ask the original author of the data to export a _.CSV_ file for you.
+The`foreign` package reads and writes _MiniTab_ and _SYSTAT (SigmaPlot)_ files. When reading these file types you may end up with a _list_ of multiple data items. To access one of the list items use brackets, such as `data[1]`. You can also add the name of the item in the list after a `$` sign, as in `data$Control`. In some of these cases it may be easier to ask the original data owner to export a _CSV_ file for you.
 
 
 ## Minitab and Systat (SigmaPlot) examples
