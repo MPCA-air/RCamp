@@ -1,4 +1,4 @@
-name,color,age,gender,country,grumpy,fearful_of_people,playful,friendly_to_people,clumsy,greedy,owner_phone,missing_date
+name,color,age,sex,country,grumpy,fearful_of_people,playful,friendly_to_people,clumsy,greedy,owner_phone,missing_date
 Latte,grey and brown,3,Male,Australia,2,2,5,7,1,2,651-6043112,02/24/2021
 Othello,butterscotch,15,Female,Thailand,2,1,7,6,4,2,651-6202670,12/06/2020
 Hershey,tabby,5,Male,Peru,1,1,6,7,3,3,651-4402975,12/07/2018
